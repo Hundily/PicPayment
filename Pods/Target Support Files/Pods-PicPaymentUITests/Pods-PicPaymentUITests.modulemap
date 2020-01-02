@@ -1,0 +1,6 @@
+framework module Pods_PicPaymentUITests {
+  umbrella header "Pods-PicPaymentUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,17 @@
+"teste" = "teste";
+"contacts" = "Contatos";
+"placeHolderSearch" = "A quem você deseja pagar?";
+"titleCreditCard" = "Cadastre um cartão de crédito";
+"paymentReceipt" = "Recibo";
+"totalPaid" = "Total pago";
+"descriptionCreditCard" = "Para fazer pagamentos para outras pessoas você precisa cadastrar um cartão de crédito pessoal.";
+"registerCard" = "Cadastrar cartão";
+"saveCreditCard" = "Salvar";
+"payment" = "Pagar";
+
+"errorInternetDescription" = "Não foi possível carregar a página no momento";
+"errorUnexpectedDescription" = "Não foi possivel carregar a página no momento. Por favor, tente mais tarde.";
+"errorUnexpectedTitle" = "Erro inesperado";
+"errorInternetTitle" = "Sem conexão com internet";
+"errorEmptyStateTitleContact" = "Sem Contatos";
+"errorEmptyStateDescriptionContact" = "Não foi possível encontrar os contatos.";

@@ -1,0 +1,94 @@
+//
+//  CustomButton.swift
+//  PicPayment
+//
+//  Created by Hundily Cerqueira Silva on 27/11/19.
+//  Copyright © 2019 PicPayment. All rights reserved.
+//
+
+import Foundation
+import UIKit
+
+enum CustomButtonState {
+    case enabled
+    case disabled
+    case loading
+}
+
+class CustomButton: UIButton {
+    
+    var originalButtonText: String?
+    var activityIndicator: UIActivityIndicatorView!
+    
+    init() {
+        super.init(frame: .zero)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupUI()
+        layoutButton(.enabled)
+    }
+    
+    func setupUI() {
+        self.setTitleColor(UIColor.white, for: .normal)
+        self.setTitleColor(ColorName.green.color, for: .disabled)
+    }
+    
+    func layoutButton(_ state: CustomButtonState) {
+        originalButtonText = self.titleLabel?.text
+        self.setTitle(self.titleLabel?.text, for: .normal)
+        self.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        self.titleLabel?.isHidden = false
+        self.isEnabled = true
+        self.backgroundColor = ColorName.green.color
+        self.layer.cornerRadius = 25
+        self.contentEdgeInsets = UIEdgeInsets(top: 26, left: 16, bottom: 26, right: 16)
+        activityIndicator = createActivityIndicator()
+        hideLoading()
+        
+        switch state {
+        case .enabled:
+            return
+        case .disabled:
+            self.isEnabled = false
+            self.backgroundColor = UIColor.gray
+        case .loading:
+            self.setTitle("", for: .normal)
+            self.titleLabel?.isHidden = true
+            self.isEnabled = false
+            showSpinning()
+        }
+    }
+    
+    func hideLoading() {
+        self.setTitle(originalButtonText, for: .normal)
+        activityIndicator.stopAnimating()
+    }
+
+    private func createActivityIndicator() -> UIActivityIndicatorView {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.color = .white
+        return activityIndicator
+    }
+
+    private func showSpinning() {
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        self.addSubview(activityIndicator)
+        centerActivityIndicatorInButton()
+        activityIndicator.startAnimating()
+    }
+
+    private func centerActivityIndicatorInButton() {
+        let xCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: activityIndicator, attribute: .centerX, multiplier: 1, constant: 0)
+        self.addConstraint(xCenterConstraint)
+
+        let yCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerY, relatedBy: .equal, toItem: activityIndicator, attribute: .centerY, multiplier: 1, constant: 0)
+        self.addConstraint(yCenterConstraint)
+    }
+}
