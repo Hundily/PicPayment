@@ -18,7 +18,10 @@ enum CustomButtonState {
 class CustomButton: UIButton {
     
     var originalButtonText: String?
-    var activityIndicator: UIActivityIndicatorView!
+    fileprivate lazy var activityIndicator: UIActivityIndicatorView = {
+      let animation = createActivityIndicator()
+      return animation
+    }()
     
     init() {
         super.init(frame: .zero)
@@ -48,13 +51,13 @@ class CustomButton: UIButton {
         self.backgroundColor = ColorName.green.color
         self.layer.cornerRadius = 25
         self.contentEdgeInsets = UIEdgeInsets(top: 26, left: 16, bottom: 26, right: 16)
-        activityIndicator = createActivityIndicator()
-        hideLoading()
         
         switch state {
         case .enabled:
+            hideLoading()
             return
         case .disabled:
+            hideLoading()
             self.isEnabled = false
             self.backgroundColor = UIColor.gray
         case .loading:

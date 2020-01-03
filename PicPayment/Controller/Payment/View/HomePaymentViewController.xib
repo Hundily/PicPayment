@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePaymentViewController" customModule="PicPayment" customModuleProvider="target">
             <connections>
+                <outlet property="buttonPayment" destination="bTc-21-690" id="Z8v-Lh-FIp"/>
                 <outlet property="creditCardInfos" destination="IzO-Z9-4hZ" id="I8M-VL-Gqp"/>
                 <outlet property="imageContact" destination="r7k-mh-2KU" id="C9h-5Y-su4"/>
                 <outlet property="inputValue" destination="By9-y7-GJ2" id="hsX-cD-IcH"/>
+                <outlet property="labelErrorPayment" destination="cM5-rw-s44" id="9HV-oL-bQV"/>
                 <outlet property="labelNickName" destination="NtY-Ft-Pt5" id="Ln6-4x-CkE"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -33,12 +35,6 @@
                     <rect key="frame" x="20" y="68" width="335" height="20.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEp-4y-nwb">
-                    <rect key="frame" x="98" y="144.5" width="21.5" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" red="0.46671670679999999" green="0.47052198649999999" blue="0.47451072929999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dU3-Qs-27Z">
@@ -75,8 +71,8 @@
                         <action selector="actionPayment:" destination="-1" eventType="touchUpInside" id="Lgg-xZ-mOL"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="0,00" textAlignment="center" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="By9-y7-GJ2" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="127.5" y="108.5" width="120" height="92"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$0,00" textAlignment="center" minimumFontSize="25" translatesAutoresizingMaskIntoConstraints="NO" id="By9-y7-GJ2" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                    <rect key="frame" x="20" y="108.5" width="335" height="92"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="92" id="tz1-5J-O1r"/>
                     </constraints>
@@ -91,20 +87,29 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM5-rw-s44">
+                    <rect key="frame" x="78" y="269.5" width="219" height="20.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.1137993112206459" green="0.11752340942621231" blue="0.12549138069152832" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
-                <constraint firstItem="NEp-4y-nwb" firstAttribute="centerY" secondItem="By9-y7-GJ2" secondAttribute="centerY" id="34e-gw-7Gs"/>
                 <constraint firstItem="bTc-21-690" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7Yv-eQ-fW9"/>
                 <constraint firstItem="r7k-mh-2KU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9NV-9Q-f2g"/>
-                <constraint firstItem="By9-y7-GJ2" firstAttribute="leading" secondItem="NEp-4y-nwb" secondAttribute="trailing" constant="8" id="DtA-bg-ldc"/>
+                <constraint firstItem="cM5-rw-s44" firstAttribute="top" secondItem="dU3-Qs-27Z" secondAttribute="bottom" constant="8" id="Hg1-CG-kq5"/>
                 <constraint firstItem="dU3-Qs-27Z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Lhv-YH-Xls"/>
+                <constraint firstItem="By9-y7-GJ2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="PGQ-6V-5Tv"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="By9-y7-GJ2" secondAttribute="trailing" constant="20" id="QPr-n2-v03"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bTc-21-690" secondAttribute="trailing" constant="20" id="WET-Oc-j4w"/>
                 <constraint firstItem="NtY-Ft-Pt5" firstAttribute="top" secondItem="r7k-mh-2KU" secondAttribute="bottom" constant="8" id="avO-i3-jgu"/>
+                <constraint firstItem="cM5-rw-s44" firstAttribute="trailing" secondItem="HOw-qN-mde" secondAttribute="trailing" id="bGn-G8-fKj"/>
                 <constraint firstItem="NtY-Ft-Pt5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ceL-cX-isH"/>
                 <constraint firstItem="dU3-Qs-27Z" firstAttribute="top" secondItem="By9-y7-GJ2" secondAttribute="bottom" constant="28" id="fEC-i6-0uf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NtY-Ft-Pt5" secondAttribute="trailing" constant="20" id="ovO-wJ-7XR"/>
                 <constraint firstItem="By9-y7-GJ2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pyI-dx-oVx"/>
+                <constraint firstItem="cM5-rw-s44" firstAttribute="leading" secondItem="IzO-Z9-4hZ" secondAttribute="leading" id="rEM-Z2-3g3"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bTc-21-690" secondAttribute="bottom" constant="8" id="rRf-09-kxg"/>
                 <constraint firstItem="By9-y7-GJ2" firstAttribute="top" secondItem="NtY-Ft-Pt5" secondAttribute="bottom" constant="20" id="yw1-e8-w2v"/>
                 <constraint firstItem="r7k-mh-2KU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="yzo-eS-eoB"/>

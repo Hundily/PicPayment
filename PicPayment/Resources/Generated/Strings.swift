@@ -17,8 +17,12 @@ internal enum L10n {
   internal static let descriptionCreditCard = L10n.tr("Localizable", "descriptionCreditCard")
   /// Não foi possível encontrar os contatos.
   internal static let errorEmptyStateDescriptionContact = L10n.tr("Localizable", "errorEmptyStateDescriptionContact")
+  /// Não foi possível realizar o pagamento nesse momento.
+  internal static let errorEmptyStateDescriptionPaymento = L10n.tr("Localizable", "errorEmptyStateDescriptionPaymento")
   /// Sem Contatos
   internal static let errorEmptyStateTitleContact = L10n.tr("Localizable", "errorEmptyStateTitleContact")
+  /// Não foi possível realizar o pagamento
+  internal static let errorFetchPayment = L10n.tr("Localizable", "errorFetchPayment")
   /// Não foi possível carregar a página no momento
   internal static let errorInternetDescription = L10n.tr("Localizable", "errorInternetDescription")
   /// Sem conexão com internet

@@ -36,5 +36,100 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "26926E9A-40F9-4B17-9E72-3DEDC671F699"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicPayment/Controller/Payment/HomePaymentPresenter.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "fetchPayment(payment:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97F1A2C8-8268-4C9F-9F57-92698C7F5355"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicPayment/Services/Payment/PaymentService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "fetchPayment(paymentTransaction:completion:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "97F1A2C8-8268-4C9F-9F57-92698C7F5355 - 373e1ca9a3254c6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (PicPayment.ServiceResult&lt;PicPayment.Payment&gt;) -&gt; () in PicPayment.PaymentService.fetchPayment(paymentTransaction: PicPayment.Payment, completion: (PicPayment.ServiceResult&lt;PicPayment.Payment&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PicPayment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hundily/Documents/Github/PicPayment/PicPayment/Services/Payment/PaymentService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "97F1A2C8-8268-4C9F-9F57-92698C7F5355 - 373e1ca9a3254c6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (PicPayment.ServiceResult&lt;PicPayment.Payment&gt;) -&gt; () in PicPayment.PaymentService.fetchPayment(paymentTransaction: PicPayment.Payment, completion: (PicPayment.ServiceResult&lt;PicPayment.Payment&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PicPayment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hundily/Documents/Github/PicPayment/PicPayment/Services/Payment/PaymentService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "203">
+               </Location>
+               <Location
+                  uuid = "97F1A2C8-8268-4C9F-9F57-92698C7F5355 - 373e1ca9a3254c6f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (PicPayment.ServiceResult&lt;PicPayment.Payment&gt;) -&gt; () in PicPayment.PaymentService.fetchPayment(paymentTransaction: PicPayment.Payment, completion: (PicPayment.ServiceResult&lt;PicPayment.Payment&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "PicPayment"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/hundily/Documents/Github/PicPayment/PicPayment/Services/Payment/PaymentService.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "31"
+                  endingLineNumber = "31"
+                  offsetFromSymbolStart = "1723">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EE1AD6CB-9465-4C07-82F5-8C6671FEABA3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PicPayment/Services/Payment/PaymentService.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "fetchPayment(paymentTransaction:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

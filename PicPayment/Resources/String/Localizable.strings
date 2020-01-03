@@ -10,8 +10,10 @@
 "payment" = "Pagar";
 
 "errorInternetDescription" = "Não foi possível carregar a página no momento";
+"errorFetchPayment" = "Não foi possível realizar o pagamento";
 "errorUnexpectedDescription" = "Não foi possivel carregar a página no momento. Por favor, tente mais tarde.";
 "errorUnexpectedTitle" = "Erro inesperado";
 "errorInternetTitle" = "Sem conexão com internet";
 "errorEmptyStateTitleContact" = "Sem Contatos";
 "errorEmptyStateDescriptionContact" = "Não foi possível encontrar os contatos.";
+"errorEmptyStateDescriptionPaymento" = "Não foi possível realizar o pagamento nesse momento.";

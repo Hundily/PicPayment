@@ -40,6 +40,8 @@
 		9F2FEFBB653A675B4210CA20 /* Pods_PicPayment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA5D260C4999F0DBE0B23CD /* Pods_PicPayment.framework */; };
 		A001576623B577A50009BB3F /* PaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001576523B577A50009BB3F /* PaymentRouter.swift */; };
 		A001576823B577EC0009BB3F /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001576723B577EC0009BB3F /* PaymentService.swift */; };
+		A02E5D9C23BF7BFF00E857EF /* HomePaymentPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E5D9B23BF7BFF00E857EF /* HomePaymentPresenter.swift */; };
+		A02E5D9E23BF7DA800E857EF /* HomePaymentProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A02E5D9D23BF7DA800E857EF /* HomePaymentProtocol.swift */; };
 		A0371643238F000D00D60250 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0371642238F000D00D60250 /* CreditCard.swift */; };
 		A0371645238F00EF00D60250 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0371644238F00EF00D60250 /* CustomButton.swift */; };
 		A04AD46023B51F26006470CE /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AD45F23B51F26006470CE /* Payment.swift */; };
@@ -150,6 +152,8 @@
 		68CCDFEE22B5832A0077F31A /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftgen.yml; sourceTree = "<group>"; };
 		A001576523B577A50009BB3F /* PaymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRouter.swift; sourceTree = "<group>"; };
 		A001576723B577EC0009BB3F /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
+		A02E5D9B23BF7BFF00E857EF /* HomePaymentPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePaymentPresenter.swift; sourceTree = "<group>"; };
+		A02E5D9D23BF7DA800E857EF /* HomePaymentProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePaymentProtocol.swift; sourceTree = "<group>"; };
 		A0371642238F000D00D60250 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 		A0371644238F00EF00D60250 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
 		A04AD45F23B51F26006470CE /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
@@ -441,12 +445,22 @@
 			path = Payment;
 			sourceTree = "<group>";
 		};
-		A0DED17D2329D1FB000F1B25 /* Payment */ = {
+		A02E5D9A23BF7BDF00E857EF /* View */ = {
 			isa = PBXGroup;
 			children = (
 				A04AD46123B536BA006470CE /* HomePaymentViewController.swift */,
 				A04AD46223B536BA006470CE /* HomePaymentViewController.xib */,
 				A0DED1842329D262000F1B25 /* PaymentReceiptViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A0DED17D2329D1FB000F1B25 /* Payment */ = {
+			isa = PBXGroup;
+			children = (
+				A02E5D9A23BF7BDF00E857EF /* View */,
+				A02E5D9B23BF7BFF00E857EF /* HomePaymentPresenter.swift */,
+				A02E5D9D23BF7DA800E857EF /* HomePaymentProtocol.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -886,6 +900,7 @@
 				B204A76A22B6AB0800FD0BE1 /* Fonts.swift in Sources */,
 				B204A78D22B6B3CC00FD0BE1 /* NavigationRouter.swift in Sources */,
 				B204A79C22B6B87500FD0BE1 /* Identifier.swift in Sources */,
+				A02E5D9E23BF7DA800E857EF /* HomePaymentProtocol.swift in Sources */,
 				A04AD46023B51F26006470CE /* Payment.swift in Sources */,
 				B282522F22B86D700078F9B0 /* CreditCardCoordinator.swift in Sources */,
 				B204A76B22B6AB0800FD0BE1 /* Colors.swift in Sources */,
@@ -903,6 +918,7 @@
 				B204A79A22B6B85B00FD0BE1 /* UITableView+ReusableUtils.swift in Sources */,
 				B204A78322B6B3AE00FD0BE1 /* Presentable+UIKit.swift in Sources */,
 				B204A79822B6B5DE00FD0BE1 /* ContactViewCell.swift in Sources */,
+				A02E5D9C23BF7BFF00E857EF /* HomePaymentPresenter.swift in Sources */,
 				B204A78F22B6B3CC00FD0BE1 /* RouterProtocol.swift in Sources */,
 				B204A7AC22B72C6D00FD0BE1 /* UISearchBar+Extensions.swift in Sources */,
 				6818C07422B48DBC00F04928 /* ServiceClient.swift in Sources */,

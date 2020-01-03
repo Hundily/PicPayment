@@ -13,11 +13,18 @@ class HomePaymentViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var imageContact: UIImageView!
     @IBOutlet weak var labelNickName: UILabel!
+    @IBOutlet weak var labelErrorPayment: UILabel!
     @IBOutlet weak var inputValue: SkyFloatingLabelTextField!
     @IBOutlet weak var creditCardInfos: UILabel!
+    @IBOutlet weak var buttonPayment: CustomButton!
     private var creditCard: CreditCard?
     private var contact: Contact?
     private let kHomePaymentViewController = "HomePaymentViewController"
+    
+    private lazy var presenter: HomePaymentPresenter = {
+        let presenter = HomePaymentPresenter(viewProtocol: self, serviceAPI: PaymentService())
+        return presenter
+    }()
     
     init(contact: Contact, creditCard: CreditCard) {
         self.contact = contact
@@ -42,10 +49,12 @@ class HomePaymentViewController: UIViewController, UITextFieldDelegate {
     }
     
     func setupUI() {
+        labelErrorPayment.isHidden = true
         imageContact.layer.cornerRadius = imageContact.frame.size.width / 2
         inputValue.lineHeight = 0
         inputValue.selectedLineHeight = 0
         inputValue.tintColor = .clear
+        inputValue.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
     }
     
     func setData() {
@@ -66,6 +75,38 @@ class HomePaymentViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func actionPayment(_ sender: Any) {
-        print("actionPayment")
+        print("contact", contact)
+        print("creditCard", creditCard)
+        print("value", inputValue.text)
+        
+        let paymentModel = Payment(card_number: creditCard?.cardNumber ?? "", cvv: creditCard?.cardCvv ?? "", value: inputValue.text ?? "", expiry_date: creditCard?.cardExpired ?? "", destination_user_id: "\(contact?.id ?? 0)")
+        
+        presenter.fetchPayment(payment: paymentModel)
+    }
+    
+    @objc func myTextFieldDidChange(_ textField: UITextField) {
+        if let amountString = textField.text?.currencyInputFormatting() {
+            textField.text = amountString
+        }
+    }
+}
+
+extension HomePaymentViewController: HomePaymentProtocol {
+    func show() {
+//        buttonPayment.layoutButton(.enabled)
+        //
+    }
+    
+    func showLoading() {
+        buttonPayment.layoutButton(.loading)
+    }
+    
+    func dismissLoading() {
+        buttonPayment.layoutButton(.enabled)
+    }
+    
+    func show(error: Error) {
+        labelErrorPayment.isHidden = false
+        labelErrorPayment.text = error.localizedDescription
     }
 }

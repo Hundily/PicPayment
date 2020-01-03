@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol PaymentServiceProtol  {
+protocol PaymentServiceProtocol  {
     func fetchPayment(paymentTransaction: Payment, completion: @escaping (ServiceResult<Payment>) -> Void)
 }
 
-final  class PaymentService: NSObject, PaymentServiceProtol {
+final class PaymentService: NSObject, PaymentServiceProtocol {
     
     private let serviceProtocol: ServiceClientProtocol
     
@@ -25,14 +25,14 @@ final  class PaymentService: NSObject, PaymentServiceProtol {
     }
     
     func fetchPayment(paymentTransaction: Payment, completion: @escaping (ServiceResult<Payment>) -> Void) {
-        let router = PaymentRouter.fetchPayment
-        self.serviceProtocol.request(router: router) { (response: ServiceResult<Contact>) in
+        let router = PaymentRouter.fetchPayment(paymentTransaction)
+        self.serviceProtocol.request(router: router) { (response: ServiceResult<Payment>) in
             switch response {
-            case let .success(_): break
-//                if value.isEmpty {
-//                    completion(.failure(.empty(.contact)))
-//                }
-//                completion(.success(value))
+            case let .success(value):
+                if value != nil {
+                    completion(.failure(.empty(.payment)))
+                }
+            completion(.success(value))
             case let .failure(error):
                 completion(.failure(error))
             }
