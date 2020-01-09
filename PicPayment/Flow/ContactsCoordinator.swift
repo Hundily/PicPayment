@@ -23,22 +23,29 @@ final class ContactsCoordinator: Coordinator {
             if let creditCard = UserDefaults.standard.object(forKey: "CREDIT_CARD") as? Data {
                 let decoder = JSONDecoder()
                 if let creditCardParse = try? decoder.decode(CreditCard.self, from: creditCard) {
-                    print("creditCard", creditCardParse)
-                    let homePaymentViewController = HomePaymentViewController(contact: contact, creditCard: creditCardParse)
+                    let homePaymentViewController = HomeTransferViewController(contact: contact, creditCard: creditCardParse)
                     self?.router.push(homePaymentViewController, animated: true)
                 }
             } else {
                 self?.goToCreditCardScreen(contact: contact)
             }
+            
+//            self?.goToCreditCardScreen(contact: contact)
         }
 
         router.push(contacts, animated: true)
     }
+    
+    func registerCreditCardHome(contact: Contact) {
+        let creditCardViewController = RegisterCreditCardHomeViewController(contact: contact)
+        router.push(creditCardViewController, animated: true)
+    }
+
 }
 
 private extension ContactsCoordinator {
     func goToCreditCardScreen(contact: Contact) {
-        let creditCardViewController = HomeCreditCardViewController(contact: contact)
+        let creditCardViewController = RegisterCreditCardHomeViewController(contact: contact)
         router.push(creditCardViewController, animated: true)
     }
 }

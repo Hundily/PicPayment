@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomePaymentViewController" customModule="PicPayment" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeTransferViewController" customModule="PicPayment" customModuleProvider="target">
             <connections>
                 <outlet property="buttonPayment" destination="bTc-21-690" id="Z8v-Lh-FIp"/>
                 <outlet property="creditCardInfos" destination="IzO-Z9-4hZ" id="I8M-VL-Gqp"/>
@@ -38,7 +38,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="dU3-Qs-27Z">
-                    <rect key="frame" x="78" y="228.5" width="219" height="33"/>
+                    <rect key="frame" x="62.5" y="228.5" width="250" height="33"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MasterCard 1234 •" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzO-Z9-4hZ">
                             <rect key="frame" x="0.0" y="0.0" width="154" height="33"/>
@@ -47,7 +47,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOw-qN-mde">
-                            <rect key="frame" x="158" y="0.0" width="61" height="33"/>
+                            <rect key="frame" x="158" y="0.0" width="92" height="33"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <state key="normal" title="EDITAR">
                                 <color key="titleColor" red="0.35770699379999998" green="0.76785480979999998" blue="0.47054094079999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -58,11 +58,11 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="width" constant="219" id="6cp-PL-jlJ"/>
+                        <constraint firstAttribute="width" constant="250" id="6cp-PL-jlJ"/>
                     </constraints>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTc-21-690" customClass="CustomButton" customModule="PicPayment" customModuleProvider="target">
-                    <rect key="frame" x="20" y="611" width="335" height="48"/>
+                    <rect key="frame" x="20" y="607" width="335" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="DCh-hz-Tdu"/>
                     </constraints>
@@ -88,7 +88,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM5-rw-s44">
-                    <rect key="frame" x="78" y="269.5" width="219" height="20.5"/>
+                    <rect key="frame" x="62.5" y="269.5" width="250" height="20.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -110,7 +110,7 @@
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NtY-Ft-Pt5" secondAttribute="trailing" constant="20" id="ovO-wJ-7XR"/>
                 <constraint firstItem="By9-y7-GJ2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pyI-dx-oVx"/>
                 <constraint firstItem="cM5-rw-s44" firstAttribute="leading" secondItem="IzO-Z9-4hZ" secondAttribute="leading" id="rEM-Z2-3g3"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bTc-21-690" secondAttribute="bottom" constant="8" id="rRf-09-kxg"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bTc-21-690" secondAttribute="bottom" constant="12" id="rRf-09-kxg"/>
                 <constraint firstItem="By9-y7-GJ2" firstAttribute="top" secondItem="NtY-Ft-Pt5" secondAttribute="bottom" constant="20" id="yw1-e8-w2v"/>
                 <constraint firstItem="r7k-mh-2KU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="yzo-eS-eoB"/>
             </constraints>

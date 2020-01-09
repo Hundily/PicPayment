@@ -30,7 +30,6 @@ final class ContactsViewController: UIViewController {
         search.searchResultsUpdater = self
         search.searchBar.delegate = self
         search.searchBar.placeholder = L10n.placeHolderSearch
-        search.dimsBackgroundDuringPresentation = false
         return search
     }()
     
@@ -40,6 +39,7 @@ final class ContactsViewController: UIViewController {
     }()
     
     var didRequestToNextView: ((Contact) -> Void)?
+    weak var coordinator: ContactsCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -113,6 +113,7 @@ extension ContactsViewController: UITableViewDelegate {
         switch contactType {
         case let .cell(contact):
             didRequestToNextView?(contact)
+//            coordinator?.registerCreditCardHome(contact: contact)
         default:
             break
         }
@@ -178,14 +179,6 @@ extension ContactsViewController: UISearchBarDelegate {
 extension ContactsViewController: ContactProtocol {
     func show() {
         tableView.reloadData()
-    }
-    
-    func showLoading() {
-        
-    }
-    
-    func dismissLoading() {
-        
     }
     
     func show(error: Error) {

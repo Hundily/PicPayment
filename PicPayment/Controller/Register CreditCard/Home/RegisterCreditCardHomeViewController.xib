@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterCreditCardHomeViewController" customModule="PicPayment" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonCloseModal" destination="geV-E0-xOa" id="57t-ec-okF"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cadastre um Cartão de Crédito" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0C-O1-Njl">
+                    <rect key="frame" x="20" y="291.5" width="335" height="84"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="84" id="ddw-nf-vSL"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Para fazer pagamentos para outras pessoas você precisa cadastrar um cartão de credito pessoal." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ew9-tg-fDu">
+                    <rect key="frame" x="40" y="391.5" width="295" height="54"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="54" id="WJQ-Ns-PLl"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" red="0.46671670679999999" green="0.47052198649999999" blue="0.47451072929999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jxZ-GP-bCx" customClass="CustomButton" customModule="PicPayment" customModuleProvider="target">
+                    <rect key="frame" x="12" y="607" width="351" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="Qi7-fj-GR4"/>
+                    </constraints>
+                    <state key="normal" title="Cadastrar Cartão"/>
+                    <connections>
+                        <action selector="actionGoRegisterForm:" destination="-1" eventType="touchUpInside" id="Da9-FB-vFa"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="credit-card" translatesAutoresizingMaskIntoConstraints="NO" id="LSE-rl-gQu">
+                    <rect key="frame" x="137.5" y="161.5" width="100" height="100"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="Rhn-uz-LWO"/>
+                        <constraint firstAttribute="width" constant="100" id="jjN-xp-HJH"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="geV-E0-xOa">
+                    <rect key="frame" x="20" y="25" width="50" height="50"/>
+                    <color key="tintColor" red="0.35770699379999998" green="0.76785480979999998" blue="0.47054094079999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="59.5" id="2iX-Oe-GnF"/>
+                        <constraint firstAttribute="width" constant="50" id="Hen-e5-uZe"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="0.1137993112" green="0.1175234094" blue="0.12549138069999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="ew9-tg-fDu" firstAttribute="trailing" secondItem="P0C-O1-Njl" secondAttribute="trailing" constant="-20" id="8lN-L7-gP5"/>
+                <constraint firstItem="P0C-O1-Njl" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="BXR-7x-2Vp"/>
+                <constraint firstItem="LSE-rl-gQu" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="RjY-tY-QRs"/>
+                <constraint firstItem="ew9-tg-fDu" firstAttribute="top" secondItem="P0C-O1-Njl" secondAttribute="bottom" constant="16" id="Sb7-wW-hJz"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jxZ-GP-bCx" secondAttribute="trailing" constant="12" id="ZH2-Py-yOJ"/>
+                <constraint firstItem="P0C-O1-Njl" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ZJX-Gf-XhR"/>
+                <constraint firstItem="geV-E0-xOa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="a3R-IZ-Aa1"/>
+                <constraint firstItem="geV-E0-xOa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fL0-oo-hjo"/>
+                <constraint firstItem="P0C-O1-Njl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fNA-fu-Pi1"/>
+                <constraint firstItem="ew9-tg-fDu" firstAttribute="leading" secondItem="P0C-O1-Njl" secondAttribute="leading" constant="20" id="o0p-Jw-PDf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jxZ-GP-bCx" secondAttribute="bottom" constant="12" id="qCC-0m-j76"/>
+                <constraint firstItem="P0C-O1-Njl" firstAttribute="top" secondItem="LSE-rl-gQu" secondAttribute="bottom" constant="30" id="t9G-Ud-EWy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P0C-O1-Njl" secondAttribute="trailing" constant="20" id="vKn-9F-VgG"/>
+                <constraint firstItem="jxZ-GP-bCx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="vc8-l3-RKO"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="138.40000000000001" y="139.880059970015"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="chevron.down" catalog="system" width="64" height="36"/>
+        <image name="credit-card" width="100" height="71"/>
+    </resources>
+</document>

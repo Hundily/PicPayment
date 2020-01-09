@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct Payment: Codable {
+struct Transfer: Codable {
     let card_number: String
-    let cvv: String
-    let value: String
+    let cvv: Int
+    let value: Double
     let expiry_date: String
-    let destination_user_id: String
+    let destination_user_id: Int
 }

@@ -8,7 +8,5 @@
 
 protocol ContactProtocol: AnyObject {
     func show()
-    func showLoading()
-    func dismissLoading()
     func show(error: Error)
 }

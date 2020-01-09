@@ -38,8 +38,8 @@ class CustomButton: UIButton {
     }
     
     func setupUI() {
-        self.setTitleColor(UIColor.white, for: .normal)
-        self.setTitleColor(ColorName.green.color, for: .disabled)
+        self.setTitleColor(.white, for: .normal)
+        self.setTitleColor(.darkGray, for: .disabled)
     }
     
     func layoutButton(_ state: CustomButtonState) {
@@ -59,7 +59,7 @@ class CustomButton: UIButton {
         case .disabled:
             hideLoading()
             self.isEnabled = false
-            self.backgroundColor = UIColor.gray
+            self.backgroundColor = .gray
         case .loading:
             self.setTitle("", for: .normal)
             self.titleLabel?.isHidden = true

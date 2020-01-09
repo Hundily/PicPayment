@@ -1,5 +1,5 @@
 //
-//  HomePaymentPresenter.swift
+//  HomeTransferPresenter.swift
 //  PicPayment
 //
 //  Created by Hundily Cerqueira Silva on 03/01/20.
@@ -8,23 +8,23 @@
 
 import Foundation
 
-final class HomePaymentPresenter {
+final class HomeTransferPresenter {
     
-    private let viewProtocol: HomePaymentProtocol
-    private let service: PaymentService
+    private let viewProtocol: HomeTransferProtocol
+    private let service: TransferService
     
-    init(viewProtocol: HomePaymentProtocol, serviceAPI: PaymentService) {
+    init(viewProtocol: HomeTransferProtocol, serviceAPI: TransferService) {
         self.viewProtocol = viewProtocol
         self.service = serviceAPI
     }
     
-    func fetchPayment(payment: Payment) {
+    func fetchPayment(payment: Transfer) {
         viewProtocol.showLoading()
 
-        self.service.fetchPayment(paymentTransaction: payment) { [weak self] result in
+        self.service.fetchTransfer(paymentTransaction: payment) { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case let .success(response):
+            case .success(let response):
                 print(response)
             case .failure(let error):
                 self.viewProtocol.show(error: error)

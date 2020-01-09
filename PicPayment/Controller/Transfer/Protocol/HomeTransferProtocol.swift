@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol HomePaymentProtocol: AnyObject {
+protocol HomeTransferProtocol: AnyObject {
     func show()
     func showLoading()
     func dismissLoading()

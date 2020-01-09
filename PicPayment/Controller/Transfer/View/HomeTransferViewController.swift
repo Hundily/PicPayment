@@ -9,7 +9,7 @@
 import UIKit
 import SkyFloatingLabelTextField
 
-class HomePaymentViewController: UIViewController, UITextFieldDelegate {
+class HomeTransferViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var imageContact: UIImageView!
     @IBOutlet weak var labelNickName: UILabel!
@@ -19,17 +19,18 @@ class HomePaymentViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var buttonPayment: CustomButton!
     private var creditCard: CreditCard?
     private var contact: Contact?
-    private let kHomePaymentViewController = "HomePaymentViewController"
+    private let kHomeTransferViewController = "HomeTransferViewController"
     
-    private lazy var presenter: HomePaymentPresenter = {
-        let presenter = HomePaymentPresenter(viewProtocol: self, serviceAPI: PaymentService())
+    private lazy var presenter: HomeTransferPresenter = {
+        let presenter = HomeTransferPresenter(viewProtocol: self, serviceAPI: TransferService())
         return presenter
     }()
     
     init(contact: Contact, creditCard: CreditCard) {
+        presenter.contact = contact
         self.contact = contact
         self.creditCard = creditCard
-        super.init(nibName: kHomePaymentViewController, bundle: Bundle.main)
+        super.init(nibName: kHomeTransferViewController, bundle: Bundle.main)
     }
     
     required init?(coder: NSCoder) {
@@ -70,16 +71,17 @@ class HomePaymentViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func actionEditCreditCard(_ sender: Any) {
         guard let contact = self.contact else { return }
-        let vc = FormCreditCardViewController(contact: contact, isEdit: true)
+        let vc = RegisterCreditCardFormViewController(contact: contact, state: .edit)
         navigationController?.pushViewController(vc, animated: true)
     }
     
     @IBAction func actionPayment(_ sender: Any) {
-        print("contact", contact)
-        print("creditCard", creditCard)
-        print("value", inputValue.text)
+        let cardFormat = creditCard?.cardNumber.replacingOccurrences(of: " ", with: "", options: .literal, range: nil) ?? ""
+        let valueTransaction = inputValue.text?.replacingOccurrences(of: "$", with: "", options: .literal, range: nil) ?? ""
         
-        let paymentModel = Payment(card_number: creditCard?.cardNumber ?? "", cvv: creditCard?.cardCvv ?? "", value: inputValue.text ?? "", expiry_date: creditCard?.cardExpired ?? "", destination_user_id: "\(contact?.id ?? 0)")
+        let paymentModel = Transfer(card_number: cardFormat, cvv: Int(creditCard?.cardCvv ?? "") ?? 0, value: Double(valueTransaction) ?? 0.0, expiry_date: creditCard?.cardExpired ?? "", destination_user_id: contact?.id ?? 0)
+        
+        print("paymentModel", paymentModel)
         
         presenter.fetchPayment(payment: paymentModel)
     }
@@ -91,7 +93,7 @@ class HomePaymentViewController: UIViewController, UITextFieldDelegate {
     }
 }
 
-extension HomePaymentViewController: HomePaymentProtocol {
+extension HomeTransferViewController: HomeTransferProtocol {
     func show() {
 //        buttonPayment.layoutButton(.enabled)
         //
