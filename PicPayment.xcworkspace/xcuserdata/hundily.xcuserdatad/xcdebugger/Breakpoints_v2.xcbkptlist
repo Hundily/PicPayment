@@ -94,8 +94,8 @@
             filePath = "PicPayment/Controller/Register CreditCard/Form/View/RegisterCreditCardFormViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "checkEnabledButton()"
             landmarkType = "7">
          </BreakpointContent>
@@ -103,16 +103,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "C57041CF-B6A9-48F1-BF66-D34F6FDF86F3"
+            uuid = "DFB78B3F-724D-433B-B6B0-9FF336504ABE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PicPayment/Flow/ContactsCoordinator.swift"
+            filePath = "PicPayment/Controller/Transfer/View/HomeTransferViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "registerCreditCardHome(contact:)"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "goReceiptView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

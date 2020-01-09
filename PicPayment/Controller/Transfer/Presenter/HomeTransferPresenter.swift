@@ -25,7 +25,7 @@ final class HomeTransferPresenter {
             guard let self = self else { return }
             switch result {
             case .success(let response):
-                print(response)
+                self.viewProtocol.goReceiptView()
             case .failure(let error):
                 self.viewProtocol.show(error: error)
             }

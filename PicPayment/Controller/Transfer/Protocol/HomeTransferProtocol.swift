@@ -10,6 +10,7 @@ import Foundation
 
 protocol HomeTransferProtocol: AnyObject {
     func show()
+    func goReceiptView()
     func showLoading()
     func dismissLoading()
     func show(error: Error)

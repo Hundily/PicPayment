@@ -50,8 +50,13 @@ class RegisterCreditCardFormViewController: UIViewController {
         setDelegate()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.topItem?.title = " "
+        navigationController?.navigationBar.tintColor = ColorName.green.color
+    }
+    
     private func setupLayout() {
-        self.navigationController?.navigationBar.backItem?.title = " "
         let card = presenter.getCard()
         
         switch state {
@@ -149,8 +154,7 @@ class RegisterCreditCardFormViewController: UIViewController {
 }
 
 extension RegisterCreditCardFormViewController: RegisterCreditCardFormProtocol {
-    func registerCardSuccess() {
-        self.navigationController?.popViewController(animated: true)
+    func registerCardSuccess() {        self.navigationController?.popViewController(animated: true)
     }
     
     func registerCardError() {

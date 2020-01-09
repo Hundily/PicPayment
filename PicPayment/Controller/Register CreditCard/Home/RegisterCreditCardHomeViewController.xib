@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterCreditCardHomeViewController" customModule="PicPayment" customModuleProvider="target">
             <connections>
-                <outlet property="buttonCloseModal" destination="geV-E0-xOa" id="57t-ec-okF"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -53,14 +53,6 @@
                         <constraint firstAttribute="width" constant="100" id="jjN-xp-HJH"/>
                     </constraints>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="geV-E0-xOa">
-                    <rect key="frame" x="20" y="25" width="50" height="50"/>
-                    <color key="tintColor" red="0.35770699379999998" green="0.76785480979999998" blue="0.47054094079999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="59.5" id="2iX-Oe-GnF"/>
-                        <constraint firstAttribute="width" constant="50" id="Hen-e5-uZe"/>
-                    </constraints>
-                </imageView>
             </subviews>
             <color key="backgroundColor" red="0.1137993112" green="0.1175234094" blue="0.12549138069999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
@@ -70,8 +62,6 @@
                 <constraint firstItem="ew9-tg-fDu" firstAttribute="top" secondItem="P0C-O1-Njl" secondAttribute="bottom" constant="16" id="Sb7-wW-hJz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="jxZ-GP-bCx" secondAttribute="trailing" constant="12" id="ZH2-Py-yOJ"/>
                 <constraint firstItem="P0C-O1-Njl" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ZJX-Gf-XhR"/>
-                <constraint firstItem="geV-E0-xOa" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="a3R-IZ-Aa1"/>
-                <constraint firstItem="geV-E0-xOa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fL0-oo-hjo"/>
                 <constraint firstItem="P0C-O1-Njl" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="fNA-fu-Pi1"/>
                 <constraint firstItem="ew9-tg-fDu" firstAttribute="leading" secondItem="P0C-O1-Njl" secondAttribute="leading" constant="20" id="o0p-Jw-PDf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jxZ-GP-bCx" secondAttribute="bottom" constant="12" id="qCC-0m-j76"/>
@@ -84,7 +74,6 @@
         </view>
     </objects>
     <resources>
-        <image name="chevron.down" catalog="system" width="64" height="36"/>
         <image name="credit-card" width="100" height="71"/>
     </resources>
 </document>

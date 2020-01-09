@@ -29,8 +29,6 @@ final class ContactsCoordinator: Coordinator {
             } else {
                 self?.goToCreditCardScreen(contact: contact)
             }
-            
-//            self?.goToCreditCardScreen(contact: contact)
         }
 
         router.push(contacts, animated: true)

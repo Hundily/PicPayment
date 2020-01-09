@@ -10,7 +10,6 @@ import UIKit
 
 class RegisterCreditCardHomeViewController: UIViewController {
     
-    @IBOutlet weak var buttonCloseModal: UIImageView!
     private var contact: Contact?
     
     init(contact: Contact?) {
@@ -27,14 +26,12 @@ class RegisterCreditCardHomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.backItem?.title = " "
-        let tap = UITapGestureRecognizer(target: self, action: #selector(closeModal))
-        self.buttonCloseModal.addGestureRecognizer(tap)
-        buttonCloseModal.isUserInteractionEnabled = true
     }
     
-    @objc func closeModal(sender:UITapGestureRecognizer){
-        dismiss(animated: true, completion: nil)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.topItem?.title = " "
+        navigationController?.navigationBar.tintColor = ColorName.green.color
     }
     
     @IBAction func actionGoRegisterForm(_ sender: Any) {

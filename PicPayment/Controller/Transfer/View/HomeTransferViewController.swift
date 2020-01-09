@@ -8,9 +8,10 @@
 
 import UIKit
 import SkyFloatingLabelTextField
+import FittedSheets
 
 class HomeTransferViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var imageContact: UIImageView!
     @IBOutlet weak var labelNickName: UILabel!
     @IBOutlet weak var labelErrorPayment: UILabel!
@@ -27,7 +28,6 @@ class HomeTransferViewController: UIViewController, UITextFieldDelegate {
     }()
     
     init(contact: Contact, creditCard: CreditCard) {
-        presenter.contact = contact
         self.contact = contact
         self.creditCard = creditCard
         super.init(nibName: kHomeTransferViewController, bundle: Bundle.main)
@@ -94,9 +94,15 @@ class HomeTransferViewController: UIViewController, UITextFieldDelegate {
 }
 
 extension HomeTransferViewController: HomeTransferProtocol {
+    func goReceiptView() {
+        let controller = ReceiptViewController()
+        let sheetController = SheetViewController(controller: controller, sizes: [.fixed(600), .fullScreen])
+        sheetController.topCornersRadius = 15
+        self.present(sheetController, animated: false, completion: nil)
+    }
+    
     func show() {
-//        buttonPayment.layoutButton(.enabled)
-        //
+        //buttonPayment.layoutButton(.enabled)
     }
     
     func showLoading() {
