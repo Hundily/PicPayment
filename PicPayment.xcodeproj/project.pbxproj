@@ -61,6 +61,7 @@
 		A089D608232983F5003D1169 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A089D606232983F5003D1169 /* String+Extensions.swift */; };
 		A089D609232983F5003D1169 /* Region+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A089D607232983F5003D1169 /* Region+Extensions.swift */; };
 		A0CC87A923C79DB400DCBF88 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC87A823C79DB400DCBF88 /* Transaction.swift */; };
+		A0CC87AB23C8E82000DCBF88 /* ToolBarButtonKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC87AA23C8E82000DCBF88 /* ToolBarButtonKeyboard.swift */; };
 		B204A76822B6AB0800FD0BE1 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A76422B6AB0800FD0BE1 /* Strings.swift */; };
 		B204A76922B6AB0800FD0BE1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A76522B6AB0800FD0BE1 /* Assets.swift */; };
 		B204A76A22B6AB0800FD0BE1 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A76622B6AB0800FD0BE1 /* Fonts.swift */; };
@@ -180,6 +181,7 @@
 		A089D606232983F5003D1169 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A089D607232983F5003D1169 /* Region+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Region+Extensions.swift"; sourceTree = "<group>"; };
 		A0CC87A823C79DB400DCBF88 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		A0CC87AA23C8E82000DCBF88 /* ToolBarButtonKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarButtonKeyboard.swift; sourceTree = "<group>"; };
 		B204A76422B6AB0800FD0BE1 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		B204A76522B6AB0800FD0BE1 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		B204A76622B6AB0800FD0BE1 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -740,6 +742,7 @@
 			isa = PBXGroup;
 			children = (
 				B2C6D32622B7454C00187D05 /* ErrorView.swift */,
+				A0CC87AA23C8E82000DCBF88 /* ToolBarButtonKeyboard.swift */,
 				A0371644238F00EF00D60250 /* CustomButton.swift */,
 				B2C6D32822B745CF00187D05 /* EmptyState.swift */,
 				B2C6D32A22B7467000187D05 /* ManagerError.swift */,
@@ -1089,6 +1092,7 @@
 				A084AC1E23C765400059AD5B /* RegisterCreditCardCoordinator.swift in Sources */,
 				A084AC1C23C764710059AD5B /* TransferCoordinator.swift in Sources */,
 				B204A78122B6B39F00FD0BE1 /* Presentable.swift in Sources */,
+				A0CC87AB23C8E82000DCBF88 /* ToolBarButtonKeyboard.swift in Sources */,
 				B2C6D32922B745CF00187D05 /* EmptyState.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

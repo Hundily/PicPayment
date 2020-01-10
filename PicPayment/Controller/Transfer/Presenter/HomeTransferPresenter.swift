@@ -30,6 +30,7 @@ final class HomeTransferPresenter {
             case .failure(let error):
                 self.viewProtocol.dismissLoading()
                 self.viewProtocol.show(error: error)
+                self.viewProtocol.goReceiptView()
             }
         }
 

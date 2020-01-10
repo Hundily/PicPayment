@@ -10,7 +10,7 @@ import UIKit
 import SkyFloatingLabelTextField
 import FittedSheets
 
-class HomeTransferViewController: UIViewController, UITextFieldDelegate {
+class HomeTransferViewController: UIViewController {
     
     @IBOutlet weak var imageContact: UIImageView!
     @IBOutlet weak var labelNickName: UILabel!
@@ -21,6 +21,16 @@ class HomeTransferViewController: UIViewController, UITextFieldDelegate {
     private var creditCard: CreditCard?
     private var contact: Contact?
     private let kHomeTransferViewController = "HomeTransferViewController"
+
+    fileprivate lazy var toolBar: ToolBarButtonKeyboard = {
+        let cgRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 100.0)
+        let tool = ToolBarButtonKeyboard(frame: cgRect, confirm: {
+            self.didPressConfirmButton()
+        }, cancel: {
+//            self.didPressCancelButton()
+        })
+        return tool
+    }()
     
     private lazy var presenter: HomeTransferPresenter = {
         let presenter = HomeTransferPresenter(viewProtocol: self, serviceAPI: TransferService())
@@ -49,21 +59,24 @@ class HomeTransferViewController: UIViewController, UITextFieldDelegate {
         navigationController?.navigationBar.tintColor = ColorName.green.color
     }
     
-    func setupUI() {
+    private func setupUI() {
         labelErrorPayment.isHidden = true
         imageContact.layer.cornerRadius = imageContact.frame.size.width / 2
         inputValue.lineHeight = 0
         inputValue.selectedLineHeight = 0
         inputValue.tintColor = .clear
         inputValue.textAlignment = .center
+        inputValue.delegate = self
         let centeredParagraphStyle = NSMutableParagraphStyle()
         centeredParagraphStyle.alignment = .center
         let attributedPlaceholder = NSAttributedString(string: "R$ 0,00", attributes: [NSAttributedString.Key.paragraphStyle: centeredParagraphStyle])
         inputValue.attributedPlaceholder = attributedPlaceholder
         inputValue.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
+        self.toolBar.configButton(type: .disable)
+        buttonPayment.layoutButton(.disabled)
     }
     
-    func setData() {
+    private func setData() {
         imageContact.imageFromURL(urlString: self.contact?.img ?? "")
         labelNickName.text = self.contact?.username
         let last4 = String(self.creditCard?.cardNumber.suffix(4) ?? "")
@@ -72,6 +85,30 @@ class HomeTransferViewController: UIViewController, UITextFieldDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         view.endEditing(true)
+        handleTextIsEmpty()
+    }
+    
+    fileprivate func setupTextFieldsAccessoryView() {
+        inputValue.inputAccessoryView = toolBar
+    }
+    
+    fileprivate func didPressConfirmButton() {
+        guard let inputText = inputValue.text else {  return }
+        
+        inputValue.resignFirstResponder()
+        if !inputText.isEmpty {
+            self.actionPayment(String())
+        }
+    }
+    
+    private func handleTextIsEmpty() {
+        if let text = inputValue.text, !text.isEmpty {
+            self.toolBar.configButton(type: .enable)
+            buttonPayment.layoutButton(.enabled)
+        } else {
+            self.toolBar.configButton(type: .disable)
+            buttonPayment.layoutButton(.disabled)
+        }
     }
     
     @IBAction func actionEditCreditCard(_ sender: Any) {
@@ -82,9 +119,7 @@ class HomeTransferViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func actionPayment(_ sender: Any) {
         let cardFormat = creditCard?.cardNumber.replacingOccurrences(of: " ", with: "", options: .literal, range: nil) ?? ""
-        let valueTransaction = inputValue.text?.replacingOccurrences(of: "R$ ", with: "", options: .literal, range: nil) ?? ""
-        
-        Formatter.currency.locale = .br
+        let valueTransaction = inputValue.text?.replacingOccurrences(of: "R$", with: "", options: .literal, range: nil) ?? ""
         
         let paymentModel = Transfer(card_number: cardFormat, cvv: Int(creditCard?.cardCvv ?? "") ?? 0, value: Double(valueTransaction) ?? 0.0, expiry_date: creditCard?.cardExpired ?? "", destination_user_id: contact?.id ?? 0)
         
@@ -96,6 +131,9 @@ class HomeTransferViewController: UIViewController, UITextFieldDelegate {
     @objc func myTextFieldDidChange(_ textField: UITextField) {
         if let amountString = textField.text?.currencyInputFormatting() {
             textField.text = amountString
+            self.toolBar.configButton(type: .enable)
+        } else {
+            self.toolBar.configButton(type: .disable)
         }
     }
 }
@@ -123,5 +161,14 @@ extension HomeTransferViewController: HomeTransferProtocol {
     func show(error: Error) {
         labelErrorPayment.isHidden = false
         labelErrorPayment.text = error.localizedDescription
+    }
+}
+
+extension HomeTransferViewController: UITextFieldDelegate {
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        guard let text = textField.text else { return false }
+        self.setupTextFieldsAccessoryView()
+        //self.interactor?.validInputValue(value: text.getNumberWithFormatValidate())
+        return true
     }
 }
