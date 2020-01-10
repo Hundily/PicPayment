@@ -34,6 +34,8 @@ class CustomButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
+        centerActivityIndicatorInButton()
+        self.addSubview(activityIndicator)
         layoutButton(.enabled)
     }
     
@@ -61,10 +63,10 @@ class CustomButton: UIButton {
             self.isEnabled = false
             self.backgroundColor = .gray
         case .loading:
+            showSpinning()
             self.setTitle("", for: .normal)
             self.titleLabel?.isHidden = true
             self.isEnabled = false
-            showSpinning()
         }
     }
     
@@ -81,13 +83,11 @@ class CustomButton: UIButton {
     }
 
     private func showSpinning() {
-        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(activityIndicator)
-        centerActivityIndicatorInButton()
         activityIndicator.startAnimating()
     }
 
     private func centerActivityIndicatorInButton() {
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
         let xCenterConstraint = NSLayoutConstraint(item: self, attribute: .centerX, relatedBy: .equal, toItem: activityIndicator, attribute: .centerX, multiplier: 1, constant: 0)
         self.addConstraint(xCenterConstraint)
 

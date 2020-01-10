@@ -98,5 +98,4 @@ private extension ServiceClient {
             completion(result)
         }
     }
-    
 }

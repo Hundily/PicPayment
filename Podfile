@@ -13,6 +13,7 @@ target 'PicPayment' do
   pod 'SkyFloatingLabelTextField'
   pod 'SwiftDate'
   pod 'IQKeyboardManager'
+  pod 'SwiftLint'
   # Pods for PicPayment
 
   target 'PicPaymentTests' do

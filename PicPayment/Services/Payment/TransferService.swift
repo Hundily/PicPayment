@@ -9,7 +9,7 @@
 import Foundation
 
 protocol TransferServiceProtocol  {
-    func fetchTransfer(paymentTransaction: Transfer, completion: @escaping (ServiceResult<Transfer>) -> Void)
+    func fetchTransfer(paymentTransaction: Transfer, completion: @escaping (ServiceResult<TransactionModel>) -> Void)
 }
 
 final class TransferService: NSObject, TransferServiceProtocol {
@@ -24,11 +24,11 @@ final class TransferService: NSObject, TransferServiceProtocol {
         self.serviceProtocol = service
     }
     
-    func fetchTransfer(paymentTransaction: Transfer, completion: @escaping (ServiceResult<Transfer>) -> Void) {
+    func fetchTransfer(paymentTransaction: Transfer, completion: @escaping (ServiceResult<TransactionModel>) -> Void) {
         let router = PaymentRouter.fetchPayment(paymentTransaction)
         print("router", router)
 
-        self.serviceProtocol.request(router: router) { (response: ServiceResult<Transfer>) in
+        self.serviceProtocol.request(router: router) { (response: ServiceResult<TransactionModel>) in
             switch response {
             case let .success(value):
                 print(value)

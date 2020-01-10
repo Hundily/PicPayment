@@ -55,6 +55,11 @@ class HomeTransferViewController: UIViewController, UITextFieldDelegate {
         inputValue.lineHeight = 0
         inputValue.selectedLineHeight = 0
         inputValue.tintColor = .clear
+        inputValue.textAlignment = .center
+        let centeredParagraphStyle = NSMutableParagraphStyle()
+        centeredParagraphStyle.alignment = .center
+        let attributedPlaceholder = NSAttributedString(string: "R$ 0,00", attributes: [NSAttributedString.Key.paragraphStyle: centeredParagraphStyle])
+        inputValue.attributedPlaceholder = attributedPlaceholder
         inputValue.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
     }
     
@@ -62,7 +67,7 @@ class HomeTransferViewController: UIViewController, UITextFieldDelegate {
         imageContact.imageFromURL(urlString: self.contact?.img ?? "")
         labelNickName.text = self.contact?.username
         let last4 = String(self.creditCard?.cardNumber.suffix(4) ?? "")
-        creditCardInfos.text = "MasterCard \(last4) •"
+        creditCardInfos.text = "MasterCard \(last4)"
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -77,7 +82,9 @@ class HomeTransferViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func actionPayment(_ sender: Any) {
         let cardFormat = creditCard?.cardNumber.replacingOccurrences(of: " ", with: "", options: .literal, range: nil) ?? ""
-        let valueTransaction = inputValue.text?.replacingOccurrences(of: "$", with: "", options: .literal, range: nil) ?? ""
+        let valueTransaction = inputValue.text?.replacingOccurrences(of: "R$ ", with: "", options: .literal, range: nil) ?? ""
+        
+        Formatter.currency.locale = .br
         
         let paymentModel = Transfer(card_number: cardFormat, cvv: Int(creditCard?.cardCvv ?? "") ?? 0, value: Double(valueTransaction) ?? 0.0, expiry_date: creditCard?.cardExpired ?? "", destination_user_id: contact?.id ?? 0)
         

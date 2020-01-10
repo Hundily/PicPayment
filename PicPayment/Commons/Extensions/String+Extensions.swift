@@ -82,7 +82,7 @@ extension String {
         var number: NSNumber!
         let formatter = NumberFormatter()
         formatter.numberStyle = .currencyAccounting
-        formatter.currencySymbol = "$"
+        formatter.currencySymbol = "R$ "
         formatter.maximumFractionDigits = 2
         formatter.minimumFractionDigits = 2
         
@@ -121,3 +121,28 @@ extension String {
     }
 }
 
+extension Locale {
+    static let br = Locale(identifier: "pt_BR")
+    static let us = Locale(identifier: "en_US")
+    static let uk = Locale(identifier: "en_UK")
+}
+
+extension NumberFormatter {
+    convenience init(style: Style, locale: Locale = .current) {
+        self.init()
+        self.locale = locale
+        numberStyle = style
+    }
+}
+
+extension Formatter {
+    static let currency = NumberFormatter(style: .currency)
+    static let currencyUS = NumberFormatter(style: .currency, locale: .us)
+    static let currencyBR = NumberFormatter(style: .currency, locale: .br)
+}
+
+extension Numeric {
+    var currency: String { Formatter.currency.string(for: self) ?? "" }
+    var currencyUS: String { Formatter.currencyUS.string(for: self) ?? "" }
+    var currencyBR: String { Formatter.currencyBR.string(for: self) ?? "" }
+}

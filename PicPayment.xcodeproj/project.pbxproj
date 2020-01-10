@@ -60,6 +60,7 @@
 		A089D603232981BC003D1169 /* PaymentReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A089D602232981BC003D1169 /* PaymentReceipt.swift */; };
 		A089D608232983F5003D1169 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A089D606232983F5003D1169 /* String+Extensions.swift */; };
 		A089D609232983F5003D1169 /* Region+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A089D607232983F5003D1169 /* Region+Extensions.swift */; };
+		A0CC87A923C79DB400DCBF88 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC87A823C79DB400DCBF88 /* Transaction.swift */; };
 		B204A76822B6AB0800FD0BE1 /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A76422B6AB0800FD0BE1 /* Strings.swift */; };
 		B204A76922B6AB0800FD0BE1 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A76522B6AB0800FD0BE1 /* Assets.swift */; };
 		B204A76A22B6AB0800FD0BE1 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A76622B6AB0800FD0BE1 /* Fonts.swift */; };
@@ -178,6 +179,7 @@
 		A089D602232981BC003D1169 /* PaymentReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentReceipt.swift; sourceTree = "<group>"; };
 		A089D606232983F5003D1169 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A089D607232983F5003D1169 /* Region+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Region+Extensions.swift"; sourceTree = "<group>"; };
+		A0CC87A823C79DB400DCBF88 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
 		B204A76422B6AB0800FD0BE1 /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
 		B204A76522B6AB0800FD0BE1 /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		B204A76622B6AB0800FD0BE1 /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
@@ -720,6 +722,7 @@
 				A0371642238F000D00D60250 /* CreditCard.swift */,
 				A089D602232981BC003D1169 /* PaymentReceipt.swift */,
 				A04AD45F23B51F26006470CE /* Transfer.swift */,
+				A0CC87A823C79DB400DCBF88 /* Transaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1066,6 +1069,7 @@
 				6818C07022B48DBC00F04928 /* Environment.swift in Sources */,
 				A084AC0A23C66EDA0059AD5B /* RegisterCreditCardHomeViewController.swift in Sources */,
 				A084AC1023C672820059AD5B /* RegisterCreditCardFormProtocol.swift in Sources */,
+				A0CC87A923C79DB400DCBF88 /* Transaction.swift in Sources */,
 				B204A78E22B6B3CC00FD0BE1 /* TabNavigationRouterProtocol.swift in Sources */,
 				6818C07122B48DBC00F04928 /* ServiceResult.swift in Sources */,
 				A089D608232983F5003D1169 /* String+Extensions.swift in Sources */,
