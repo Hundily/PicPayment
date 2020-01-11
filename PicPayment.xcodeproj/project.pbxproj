@@ -39,10 +39,10 @@
 		68CCDFEF22B5832A0077F31A /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 68CCDFEE22B5832A0077F31A /* swiftgen.yml */; };
 		9F2FEFBB653A675B4210CA20 /* Pods_PicPayment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAA5D260C4999F0DBE0B23CD /* Pods_PicPayment.framework */; };
 		A001576623B577A50009BB3F /* PaymentRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001576523B577A50009BB3F /* PaymentRouter.swift */; };
-		A001576823B577EC0009BB3F /* TransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001576723B577EC0009BB3F /* TransferService.swift */; };
+		A001576823B577EC0009BB3F /* PaymentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A001576723B577EC0009BB3F /* PaymentService.swift */; };
 		A0371643238F000D00D60250 /* CreditCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0371642238F000D00D60250 /* CreditCard.swift */; };
 		A0371645238F00EF00D60250 /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0371644238F00EF00D60250 /* CustomButton.swift */; };
-		A04AD46023B51F26006470CE /* Transfer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AD45F23B51F26006470CE /* Transfer.swift */; };
+		A04AD46023B51F26006470CE /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AD45F23B51F26006470CE /* Payment.swift */; };
 		A084AC0923C66EDA0059AD5B /* RegisterCreditCardHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A084AC0123C66EDA0059AD5B /* RegisterCreditCardHomeViewController.xib */; };
 		A084AC0A23C66EDA0059AD5B /* RegisterCreditCardHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084AC0223C66EDA0059AD5B /* RegisterCreditCardHomeViewController.swift */; };
 		A084AC0B23C66EDA0059AD5B /* RegisterCreditCardFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084AC0723C66EDA0059AD5B /* RegisterCreditCardFormViewController.swift */; };
@@ -159,10 +159,10 @@
 		68CCDFDD22B5816B0077F31A /* SFUIText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Bold.ttf"; sourceTree = "<group>"; };
 		68CCDFEE22B5832A0077F31A /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = swiftgen.yml; sourceTree = "<group>"; };
 		A001576523B577A50009BB3F /* PaymentRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentRouter.swift; sourceTree = "<group>"; };
-		A001576723B577EC0009BB3F /* TransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransferService.swift; sourceTree = "<group>"; };
+		A001576723B577EC0009BB3F /* PaymentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentService.swift; sourceTree = "<group>"; };
 		A0371642238F000D00D60250 /* CreditCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCard.swift; sourceTree = "<group>"; };
 		A0371644238F00EF00D60250 /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
-		A04AD45F23B51F26006470CE /* Transfer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transfer.swift; sourceTree = "<group>"; };
+		A04AD45F23B51F26006470CE /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		A084AC0123C66EDA0059AD5B /* RegisterCreditCardHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterCreditCardHomeViewController.xib; sourceTree = "<group>"; };
 		A084AC0223C66EDA0059AD5B /* RegisterCreditCardHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCreditCardHomeViewController.swift; sourceTree = "<group>"; };
 		A084AC0723C66EDA0059AD5B /* RegisterCreditCardFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCreditCardFormViewController.swift; sourceTree = "<group>"; };
@@ -457,7 +457,7 @@
 			isa = PBXGroup;
 			children = (
 				A001576523B577A50009BB3F /* PaymentRouter.swift */,
-				A001576723B577EC0009BB3F /* TransferService.swift */,
+				A001576723B577EC0009BB3F /* PaymentService.swift */,
 			);
 			path = Payment;
 			sourceTree = "<group>";
@@ -723,7 +723,7 @@
 				B204A79E22B6C42700FD0BE1 /* Contact.swift */,
 				A0371642238F000D00D60250 /* CreditCard.swift */,
 				A089D602232981BC003D1169 /* PaymentReceipt.swift */,
-				A04AD45F23B51F26006470CE /* Transfer.swift */,
+				A04AD45F23B51F26006470CE /* Payment.swift */,
 				A0CC87A823C79DB400DCBF88 /* Transaction.swift */,
 			);
 			path = Model;
@@ -1040,7 +1040,7 @@
 				B204A76A22B6AB0800FD0BE1 /* Fonts.swift in Sources */,
 				B204A78D22B6B3CC00FD0BE1 /* NavigationRouter.swift in Sources */,
 				B204A79C22B6B87500FD0BE1 /* Identifier.swift in Sources */,
-				A04AD46023B51F26006470CE /* Transfer.swift in Sources */,
+				A04AD46023B51F26006470CE /* Payment.swift in Sources */,
 				B204A76B22B6AB0800FD0BE1 /* Colors.swift in Sources */,
 				B204A79522B6B41400FD0BE1 /* ApplicationCoordinator.swift in Sources */,
 				B204A78C22B6B3CC00FD0BE1 /* NavigationRouterProtocol.swift in Sources */,
@@ -1088,7 +1088,7 @@
 				A084AC0E23C671580059AD5B /* RegisterCreditCardFormPresenter.swift in Sources */,
 				B204A7AA22B6CD0500FD0BE1 /* UIImage+Extensions.swift in Sources */,
 				B204A78B22B6B3CC00FD0BE1 /* TabNavigationRouter.swift in Sources */,
-				A001576823B577EC0009BB3F /* TransferService.swift in Sources */,
+				A001576823B577EC0009BB3F /* PaymentService.swift in Sources */,
 				A084AC1E23C765400059AD5B /* RegisterCreditCardCoordinator.swift in Sources */,
 				A084AC1C23C764710059AD5B /* TransferCoordinator.swift in Sources */,
 				B204A78122B6B39F00FD0BE1 /* Presentable.swift in Sources */,

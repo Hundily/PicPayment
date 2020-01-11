@@ -9,7 +9,7 @@
 import Foundation
 
 enum PaymentRouter {
-    case fetchPayment(Transfer)
+    case fetchPayment(Payment)
 }
 
 extension PaymentRouter: ServiceRouter {

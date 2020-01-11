@@ -1,5 +1,5 @@
 //
-//  TransferService.swift
+//  PaymentService.swift
 //  PicPayment
 //
 //  Created by Hundily Cerqueira on 26/12/19.
@@ -8,11 +8,11 @@
 
 import Foundation
 
-protocol TransferServiceProtocol  {
-    func fetchTransfer(paymentTransaction: Transfer, completion: @escaping (ServiceResult<TransactionModel>) -> Void)
+protocol PaymentServiceProtocol  {
+    func fetchPayment(paymentTransaction: Payment, completion: @escaping (ServiceResult<PaymentResponse>) -> Void)
 }
 
-final class TransferService: NSObject, TransferServiceProtocol {
+final class PaymentService: NSObject, PaymentServiceProtocol {
     
     private let serviceProtocol: ServiceClientProtocol
     
@@ -24,11 +24,11 @@ final class TransferService: NSObject, TransferServiceProtocol {
         self.serviceProtocol = service
     }
     
-    func fetchTransfer(paymentTransaction: Transfer, completion: @escaping (ServiceResult<TransactionModel>) -> Void) {
+    func fetchPayment(paymentTransaction: Payment, completion: @escaping (ServiceResult<PaymentResponse>) -> Void) {
         let router = PaymentRouter.fetchPayment(paymentTransaction)
         print("router", router)
 
-        self.serviceProtocol.request(router: router) { (response: ServiceResult<TransactionModel>) in
+        self.serviceProtocol.request(router: router) { (response: ServiceResult<PaymentResponse>) in
             switch response {
             case let .success(value):
                 print(value)

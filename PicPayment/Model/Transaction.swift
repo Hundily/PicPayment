@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TransactionModel: Codable {
+struct PaymentResponse: Codable {
     let transaction: Transaction?
 }
 

@@ -33,7 +33,7 @@ class PaymentViewController: UIViewController {
     }()
     
     private lazy var presenter: PaymentPresenter = {
-        let presenter = PaymentPresenter(viewProtocol: self, serviceAPI: TransferService())
+        let presenter = PaymentPresenter(viewProtocol: self, serviceAPI: PaymentService())
         return presenter
     }()
     
@@ -118,7 +118,7 @@ class PaymentViewController: UIViewController {
         let cardFormat = creditCard?.cardNumber.replacingOccurrences(of: " ", with: "", options: .literal, range: nil) ?? ""
         let valueTransaction = inputValue.text?.replacingOccurrences(of: "R$", with: "", options: .literal, range: nil) ?? ""
         
-        let paymentModel = Transfer(card_number: cardFormat, cvv: Int(creditCard?.cardCvv ?? "") ?? 0, value: Double(valueTransaction) ?? 0.0, expiry_date: creditCard?.cardExpired ?? "", destination_user_id: contact?.id ?? 0)
+        let paymentModel = Payment(card_number: cardFormat, cvv: Int(creditCard?.cardCvv ?? "") ?? 0, value: Double(valueTransaction) ?? 0.0, expiry_date: creditCard?.cardExpired ?? "", destination_user_id: contact?.id ?? 0)
         
         print("paymentModel", paymentModel)
         

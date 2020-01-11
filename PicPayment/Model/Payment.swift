@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Transfer: Codable {
+struct Payment: Codable {
     let card_number: String
     let cvv: Int
     let value: Double
