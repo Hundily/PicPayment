@@ -56,7 +56,7 @@
 		A089D603232981BC003D1169 /* PaymentReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A089D602232981BC003D1169 /* PaymentReceipt.swift */; };
 		A089D608232983F5003D1169 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A089D606232983F5003D1169 /* String+Extensions.swift */; };
 		A089D609232983F5003D1169 /* Region+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A089D607232983F5003D1169 /* Region+Extensions.swift */; };
-		A0CC87A923C79DB400DCBF88 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC87A823C79DB400DCBF88 /* Transaction.swift */; };
+		A0CC87A923C79DB400DCBF88 /* PaymentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC87A823C79DB400DCBF88 /* PaymentResponse.swift */; };
 		A0CC87AB23C8E82000DCBF88 /* ToolBarButtonKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0CC87AA23C8E82000DCBF88 /* ToolBarButtonKeyboard.swift */; };
 		A0E172E323CA25B200BC5142 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E172E123CA25B200BC5142 /* PaymentViewController.swift */; };
 		A0E172E423CA25B200BC5142 /* PaymentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A0E172E223CA25B200BC5142 /* PaymentViewController.xib */; };
@@ -176,7 +176,7 @@
 		A089D602232981BC003D1169 /* PaymentReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentReceipt.swift; sourceTree = "<group>"; };
 		A089D606232983F5003D1169 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A089D607232983F5003D1169 /* Region+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Region+Extensions.swift"; sourceTree = "<group>"; };
-		A0CC87A823C79DB400DCBF88 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		A0CC87A823C79DB400DCBF88 /* PaymentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentResponse.swift; sourceTree = "<group>"; };
 		A0CC87AA23C8E82000DCBF88 /* ToolBarButtonKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToolBarButtonKeyboard.swift; sourceTree = "<group>"; };
 		A0E172E123CA25B200BC5142 /* PaymentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		A0E172E223CA25B200BC5142 /* PaymentViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PaymentViewController.xib; sourceTree = "<group>"; };
@@ -724,7 +724,7 @@
 				A0371642238F000D00D60250 /* CreditCard.swift */,
 				A089D602232981BC003D1169 /* PaymentReceipt.swift */,
 				A04AD45F23B51F26006470CE /* Payment.swift */,
-				A0CC87A823C79DB400DCBF88 /* Transaction.swift */,
+				A0CC87A823C79DB400DCBF88 /* PaymentResponse.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1072,7 +1072,7 @@
 				A0E172E923CA262200BC5142 /* PaymentPresenter.swift in Sources */,
 				A084AC0A23C66EDA0059AD5B /* RegisterCreditCardHomeViewController.swift in Sources */,
 				A084AC1023C672820059AD5B /* RegisterCreditCardFormProtocol.swift in Sources */,
-				A0CC87A923C79DB400DCBF88 /* Transaction.swift in Sources */,
+				A0CC87A923C79DB400DCBF88 /* PaymentResponse.swift in Sources */,
 				B204A78E22B6B3CC00FD0BE1 /* TabNavigationRouterProtocol.swift in Sources */,
 				6818C07122B48DBC00F04928 /* ServiceResult.swift in Sources */,
 				A089D608232983F5003D1169 /* String+Extensions.swift in Sources */,

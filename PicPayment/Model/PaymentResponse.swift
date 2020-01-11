@@ -12,7 +12,7 @@ struct PaymentResponse: Codable {
     let transaction: Transaction?
 }
 
-struct Transaction : Codable {
+struct Transaction: Codable {
     let id: Int?
     let timestamp: Int?
     let value: Double?
