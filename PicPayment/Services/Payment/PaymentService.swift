@@ -9,35 +9,32 @@
 import Foundation
 
 protocol PaymentServiceProtocol  {
-    func fetchPayment(paymentTransaction: Payment, completion: @escaping (ServiceResult<PaymentResponse>) -> Void)
+    typealias PaymentResult = Result<PaymentResponse, WebserviceError>
+    func fetchPayment(payment: Payment, completion: @escaping (PaymentResult) -> Void)
 }
 
-final class PaymentService: NSObject, PaymentServiceProtocol {
+final  class PaymentService: NSObject, PaymentServiceProtocol {
     
-    private let serviceProtocol: ServiceClientProtocol
+    let service: Webservice
     
-    override init() {
-        self.serviceProtocol = ServiceClient()
+    init(service: Webservice = BaseWebservice()) {
+        self.service = service
     }
-    
-    init(service: ServiceClientProtocol) {
-        self.serviceProtocol = service
-    }
-    
-    func fetchPayment(paymentTransaction: Payment, completion: @escaping (ServiceResult<PaymentResponse>) -> Void) {
-        let router = PaymentRouter.fetchPayment(paymentTransaction)
-        print("router", router)
 
-        self.serviceProtocol.request(router: router) { (response: ServiceResult<PaymentResponse>) in
-            switch response {
-            case let .success(value):
-                print(value)
-                if value != nil {
-                    completion(.failure(.empty(.payment)))
-                }
-            completion(.success(value))
+    func fetchPayment(payment: Payment, completion: @escaping (PaymentResult) -> Void) {
+        let parameters: [String: Any] = [
+            "card_number": payment.card_number,
+            "cvv": payment.cvv,
+            "value": payment.value,
+            "expiry_date": payment.expiry_date,
+            "destination_user_id": payment.destination_user_id
+        ]
+
+        service.request(urlString: API.Path.payment.value, method: .post, parameters: parameters) { (result: PaymentResult) in
+            switch result {
+            case let .success(payment):
+                completion(.success(payment))
             case let .failure(error):
-                print("error", error)
                 completion(.failure(error))
             }
         }

@@ -8,31 +8,24 @@
 
 import Foundation
 
-protocol ContactServiceProtol  {
-    func fetchContacts(completion: @escaping (ServiceResult<[Contact]>) -> Void)
+protocol ContactServiceProtocol  {
+    typealias ContactResult = Result<[Contact], WebserviceError>
+    func fetchContact(completion: @escaping (ContactResult) -> Void)
 }
 
-final  class ContactService: NSObject, ContactServiceProtol {
+final  class ContactService: NSObject, ContactServiceProtocol {
     
-    private let serviceProtocol: ServiceClientProtocol
+    let service: Webservice
     
-    override init() {
-        self.serviceProtocol = ServiceClient()
+    init(service: Webservice = BaseWebservice()) {
+        self.service = service
     }
-    
-    init(service: ServiceClientProtocol) {
-        self.serviceProtocol = service
-    }
-    
-    func fetchContacts(completion: @escaping (ServiceResult<[Contact]>) -> Void) {
-        let router = ContactRouter.fetchContact
-        self.serviceProtocol.request(router: router) { (response: ServiceResult<[Contact]>) in
-            switch response {
-            case let .success(value):
-                if value.isEmpty {
-                    completion(.failure(.empty(.contact)))
-                }
-                completion(.success(value))
+
+    func fetchContact(completion: @escaping (ContactResult) -> Void) {
+        service.request(urlString: API.Path.contacts.value, method: .get) { (result: ContactResult) in
+            switch result {
+            case let .success(contact):
+                completion(.success(contact))
             case let .failure(error):
                 completion(.failure(error))
             }

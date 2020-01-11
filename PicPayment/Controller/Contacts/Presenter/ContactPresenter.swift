@@ -32,15 +32,14 @@ final class ContactPresenter {
     
     func fetchContacts() {
         allContacts = [.loading]
-        self.service.fetchContacts(){ [weak self] result in
+        self.service.fetchContact() { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case let .success(response):
-                self.allContacts = response.map {
+            case let .success(contact):
+                self.allContacts = contact.map {
                     return ContactListCellType.cell($0)
                 }
-            case .failure(let error):
-                print(error)
+            case let .failure(error):
                 self.allContacts = [ContactListCellType.error(error)]
             }
         }

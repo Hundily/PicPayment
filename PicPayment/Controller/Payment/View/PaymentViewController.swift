@@ -31,7 +31,7 @@ class PaymentViewController: UIViewController {
         })
         return tool
     }()
-    
+
     private lazy var presenter: PaymentPresenter = {
         let presenter = PaymentPresenter(viewProtocol: self, serviceAPI: PaymentService())
         return presenter

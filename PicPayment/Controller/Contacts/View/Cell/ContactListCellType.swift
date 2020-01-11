@@ -9,5 +9,5 @@
 enum ContactListCellType<T> {
     case loading
     case cell(T)
-    case error(ServiceError)
+    case error(WebserviceError)
 }

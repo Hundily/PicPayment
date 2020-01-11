@@ -49,7 +49,7 @@ final class ErrorView: UIView {
         return button
     }()
     
-    init(frame: CGRect, error: ServiceError, buttonAction: @escaping () -> Void) {
+    init(frame: CGRect, error: WebserviceError, buttonAction: @escaping () -> Void) {
         self.buttonAction = buttonAction
         super.init(frame: frame)
         buttonTryAgain.addTarget(self, action: #selector(actionButton), for: .touchUpInside)
@@ -66,7 +66,7 @@ final class ErrorView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setupView(error: ServiceError) {
+    private func setupView(error: WebserviceError) {
         switch error {
         case .notConnectedToInternet:
             imageEmptyState.image = Asset.icWireless.image

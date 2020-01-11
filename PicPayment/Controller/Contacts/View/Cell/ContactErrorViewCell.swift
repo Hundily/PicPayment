@@ -18,7 +18,7 @@ final class ContactErrorViewCell: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
-    func setupCell(error: ServiceError, completion: @escaping () -> Void) {
+    func setupCell(error: WebserviceError, completion: @escaping () -> Void) {
         self.selectionStyle = .none
         self.backgroundColor = .clear
         ManagerError().handler(error: error, on: self, completion: completion)

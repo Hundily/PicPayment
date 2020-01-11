@@ -20,20 +20,17 @@ final class PaymentPresenter {
     
     func fetchPayment(payment: Payment) {
         viewProtocol.showLoading()
-
-        self.service.fetchPayment(paymentTransaction: payment) { [weak self] result in
+        
+        self.service.fetchPayment(payment: payment) { [weak self] result in
             guard let self = self else { return }
             switch result {
-            case .success(let response):
-                self.viewProtocol.dismissLoading()
-                self.viewProtocol.goReceiptView()
-            case .failure(let error):
+            case let .success(payment):
+                print("payment", payment)
+            case let.failure(error):
+                print("error", error)
                 self.viewProtocol.dismissLoading()
                 self.viewProtocol.show(error: error)
-                self.viewProtocol.goReceiptView()
             }
         }
-
-//        viewProtocol.dismissLoading()
     }
 }
