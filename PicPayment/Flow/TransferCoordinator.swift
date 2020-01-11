@@ -21,8 +21,8 @@ final class TransferCoordinator: Coordinator {
         var teste = Contact(id: 123, name: "Hundily", img: "", username: "@hundily")
         var card = CreditCard(cardNumber: "123", cardName: "hundily", cardExpired: "123", cardCvv: "123")
 
-        let contacts = HomeTransferViewController(contact: teste, creditCard: card)
-        router.push(contacts, animated: true)
+//        let contacts = HomeTransferViewController(contact: teste, creditCard: card)
+//        router.push(contacts, animated: true)
     }
 }
 

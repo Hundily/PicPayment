@@ -23,7 +23,7 @@ final class ContactsCoordinator: Coordinator {
             if let creditCard = UserDefaults.standard.object(forKey: "CREDIT_CARD") as? Data {
                 let decoder = JSONDecoder()
                 if let creditCardParse = try? decoder.decode(CreditCard.self, from: creditCard) {
-                    let homePaymentViewController = HomeTransferViewController(contact: contact, creditCard: creditCardParse)
+                    let homePaymentViewController = PaymentViewController(contact: contact, creditCard: creditCardParse)
                     self?.router.push(homePaymentViewController, animated: true)
                 }
             } else {

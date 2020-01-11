@@ -1,14 +1,14 @@
 //
-//  HomePaymentProtocol.swift
+//  PaymentProtocol.swift
 //  PicPayment
 //
-//  Created by Hundily Cerqueira Silva on 03/01/20.
+//  Created by Hundily Cerqueira on 11/01/20.
 //  Copyright © 2020 PicPayment. All rights reserved.
 //
 
 import Foundation
 
-protocol HomeTransferProtocol: AnyObject {
+protocol PaymentProtocol: AnyObject {
     func show()
     func goReceiptView()
     func showLoading()

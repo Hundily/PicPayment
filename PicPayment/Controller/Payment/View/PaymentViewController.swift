@@ -10,7 +10,7 @@ import UIKit
 import SkyFloatingLabelTextField
 import FittedSheets
 
-class HomeTransferViewController: UIViewController {
+class PaymentViewController: UIViewController {
     
     @IBOutlet weak var imageContact: UIImageView!
     @IBOutlet weak var labelNickName: UILabel!
@@ -20,7 +20,7 @@ class HomeTransferViewController: UIViewController {
     @IBOutlet weak var buttonPayment: CustomButton!
     private var creditCard: CreditCard?
     private var contact: Contact?
-    private let kHomeTransferViewController = "HomeTransferViewController"
+    private let kPaymentViewController = "PaymentViewController"
 
     fileprivate lazy var toolBar: ToolBarButtonKeyboard = {
         let cgRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 100.0)
@@ -32,15 +32,15 @@ class HomeTransferViewController: UIViewController {
         return tool
     }()
     
-    private lazy var presenter: HomeTransferPresenter = {
-        let presenter = HomeTransferPresenter(viewProtocol: self, serviceAPI: TransferService())
+    private lazy var presenter: PaymentPresenter = {
+        let presenter = PaymentPresenter(viewProtocol: self, serviceAPI: TransferService())
         return presenter
     }()
     
     init(contact: Contact, creditCard: CreditCard) {
         self.contact = contact
         self.creditCard = creditCard
-        super.init(nibName: kHomeTransferViewController, bundle: Bundle.main)
+        super.init(nibName: kPaymentViewController, bundle: Bundle.main)
     }
     
     required init?(coder: NSCoder) {
@@ -134,7 +134,7 @@ class HomeTransferViewController: UIViewController {
     }
 }
 
-extension HomeTransferViewController: HomeTransferProtocol {
+extension PaymentViewController: PaymentProtocol {
     func goReceiptView() {
         let controller = ReceiptViewController()
         let sheetController = SheetViewController(controller: controller, sizes: [.fixed(600), .fullScreen])
@@ -160,7 +160,7 @@ extension HomeTransferViewController: HomeTransferProtocol {
     }
 }
 
-extension HomeTransferViewController: UITextFieldDelegate {
+extension PaymentViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         guard let text = textField.text else { return false }
         self.setupTextFieldsAccessoryView()

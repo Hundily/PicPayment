@@ -1,19 +1,19 @@
 //
-//  HomeTransferPresenter.swift
+//  PaymentPresenter.swift
 //  PicPayment
 //
-//  Created by Hundily Cerqueira Silva on 03/01/20.
+//  Created by Hundily Cerqueira on 11/01/20.
 //  Copyright © 2020 PicPayment. All rights reserved.
 //
 
 import Foundation
 
-final class HomeTransferPresenter {
+final class PaymentPresenter {
     
-    private let viewProtocol: HomeTransferProtocol
+    private let viewProtocol: PaymentProtocol
     private let service: TransferService
     
-    init(viewProtocol: HomeTransferProtocol, serviceAPI: TransferService) {
+    init(viewProtocol: PaymentProtocol, serviceAPI: TransferService) {
         self.viewProtocol = viewProtocol
         self.service = serviceAPI
     }
