@@ -71,7 +71,7 @@ class HomeTransferViewController: UIViewController {
         centeredParagraphStyle.alignment = .center
         let attributedPlaceholder = NSAttributedString(string: "R$ 0,00", attributes: [NSAttributedString.Key.paragraphStyle: centeredParagraphStyle])
         inputValue.attributedPlaceholder = attributedPlaceholder
-        inputValue.addTarget(self, action: #selector(myTextFieldDidChange), for: .editingChanged)
+        inputValue.addTarget(self, action: #selector(moneyTextFieldDidChange), for: .editingChanged)
         self.toolBar.configButton(type: .disable)
         buttonPayment.layoutButton(.disabled)
     }
@@ -102,12 +102,9 @@ class HomeTransferViewController: UIViewController {
     }
     
     private func handleTextIsEmpty() {
-        if let text = inputValue.text, !text.isEmpty {
-            self.toolBar.configButton(type: .enable)
-            buttonPayment.layoutButton(.enabled)
-        } else {
-            self.toolBar.configButton(type: .disable)
-            buttonPayment.layoutButton(.disabled)
+        if let text = inputValue.text {
+            self.toolBar.configButton(type: !text.isEmpty ? .enable : .disable)
+            buttonPayment.layoutButton(!text.isEmpty ? .enabled : .disabled)
         }
     }
     
@@ -128,12 +125,10 @@ class HomeTransferViewController: UIViewController {
         presenter.fetchPayment(payment: paymentModel)
     }
     
-    @objc func myTextFieldDidChange(_ textField: UITextField) {
+    @objc func moneyTextFieldDidChange(_ textField: UITextField) {
         if let amountString = textField.text?.currencyInputFormatting() {
             textField.text = amountString
-            self.toolBar.configButton(type: .enable)
-        } else {
-            self.toolBar.configButton(type: .disable)
+            self.toolBar.configButton(type: !amountString.isEmpty ? .enable : .disable)
         }
     }
 }

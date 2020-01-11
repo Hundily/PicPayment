@@ -70,56 +70,57 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cM5-rw-s44">
-                    <rect key="frame" x="40" y="273.5" width="295" height="20.5"/>
+                    <rect key="frame" x="74" y="273.5" width="227" height="20.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <color key="textColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doj-Yx-HYK">
-                    <rect key="frame" x="183.5" y="220.5" width="8" height="20.5"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOw-qN-mde">
-                    <rect key="frame" x="199.5" y="214.5" width="61" height="33"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <state key="normal" title="EDITAR">
-                        <color key="titleColor" red="0.35770699379999998" green="0.76785480979999998" blue="0.47054094079999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    </state>
-                    <connections>
-                        <action selector="actionEditCreditCard:" destination="-1" eventType="touchUpInside" id="Osa-nj-Ota"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MasterCard 1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzO-Z9-4hZ">
-                    <rect key="frame" x="33.5" y="220.5" width="142" height="20.5"/>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="YSY-Zl-FFq">
+                    <rect key="frame" x="74" y="220.5" width="227" height="33"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MasterCard 1234" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IzO-Z9-4hZ">
+                            <rect key="frame" x="0.0" y="0.0" width="142" height="33"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="•" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doj-Yx-HYK">
+                            <rect key="frame" x="150" y="0.0" width="8" height="33"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOw-qN-mde">
+                            <rect key="frame" x="166" y="0.0" width="61" height="33"/>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="EDITAR">
+                                <color key="titleColor" red="0.35770699379999998" green="0.76785480979999998" blue="0.47054094079999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </state>
+                            <connections>
+                                <action selector="actionEditCreditCard:" destination="-1" eventType="touchUpInside" id="Osa-nj-Ota"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
             <color key="backgroundColor" red="0.1137993112206459" green="0.11752340942621231" blue="0.12549138069152832" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
             <constraints>
+                <constraint firstItem="YSY-Zl-FFq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="74" id="1wX-tk-qVZ"/>
+                <constraint firstItem="YSY-Zl-FFq" firstAttribute="top" secondItem="By9-y7-GJ2" secondAttribute="bottom" constant="20" id="34V-QL-s4K"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="By9-y7-GJ2" secondAttribute="trailing" constant="20" id="3xJ-y5-xkv"/>
                 <constraint firstItem="bTc-21-690" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="7Yv-eQ-fW9"/>
-                <constraint firstItem="HOw-qN-mde" firstAttribute="centerY" secondItem="doj-Yx-HYK" secondAttribute="centerY" id="8dt-6H-HfQ"/>
                 <constraint firstItem="r7k-mh-2KU" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9NV-9Q-f2g"/>
-                <constraint firstItem="doj-Yx-HYK" firstAttribute="top" secondItem="By9-y7-GJ2" secondAttribute="bottom" constant="20" id="9oc-CR-ARr"/>
-                <constraint firstItem="HOw-qN-mde" firstAttribute="leading" secondItem="doj-Yx-HYK" secondAttribute="trailing" constant="8" id="QWC-LM-34u"/>
+                <constraint firstItem="cM5-rw-s44" firstAttribute="top" secondItem="YSY-Zl-FFq" secondAttribute="bottom" constant="20" id="Do6-Lj-kZu"/>
+                <constraint firstItem="cM5-rw-s44" firstAttribute="leading" secondItem="YSY-Zl-FFq" secondAttribute="leading" id="US1-xa-xvE"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bTc-21-690" secondAttribute="trailing" constant="20" id="WET-Oc-j4w"/>
-                <constraint firstItem="cM5-rw-s44" firstAttribute="centerX" secondItem="doj-Yx-HYK" secondAttribute="centerX" id="Xr0-A0-iX0"/>
-                <constraint firstItem="IzO-Z9-4hZ" firstAttribute="centerY" secondItem="doj-Yx-HYK" secondAttribute="centerY" id="YJU-AQ-MXa"/>
                 <constraint firstItem="NtY-Ft-Pt5" firstAttribute="top" secondItem="r7k-mh-2KU" secondAttribute="bottom" constant="8" id="avO-i3-jgu"/>
+                <constraint firstItem="cM5-rw-s44" firstAttribute="trailing" secondItem="YSY-Zl-FFq" secondAttribute="trailing" id="cQr-mS-l7D"/>
                 <constraint firstItem="NtY-Ft-Pt5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ceL-cX-isH"/>
-                <constraint firstItem="doj-Yx-HYK" firstAttribute="leading" secondItem="IzO-Z9-4hZ" secondAttribute="trailing" constant="8" id="eMc-Vd-F7x"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="cM5-rw-s44" secondAttribute="trailing" constant="40" id="jci-Pf-XmY"/>
-                <constraint firstItem="cM5-rw-s44" firstAttribute="top" secondItem="HOw-qN-mde" secondAttribute="bottom" constant="26" id="khB-sC-BqH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YSY-Zl-FFq" secondAttribute="trailing" constant="74" id="mM4-y0-XMf"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="NtY-Ft-Pt5" secondAttribute="trailing" constant="20" id="ovO-wJ-7XR"/>
                 <constraint firstItem="By9-y7-GJ2" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="poE-V4-9c3"/>
                 <constraint firstItem="By9-y7-GJ2" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pyI-dx-oVx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="bTc-21-690" secondAttribute="bottom" constant="12" id="rRf-09-kxg"/>
-                <constraint firstItem="doj-Yx-HYK" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="rWr-y8-3la"/>
-                <constraint firstItem="cM5-rw-s44" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="40" id="vRg-8U-Xpz"/>
                 <constraint firstItem="By9-y7-GJ2" firstAttribute="top" secondItem="NtY-Ft-Pt5" secondAttribute="bottom" constant="20" id="yw1-e8-w2v"/>
                 <constraint firstItem="r7k-mh-2KU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="yzo-eS-eoB"/>
             </constraints>

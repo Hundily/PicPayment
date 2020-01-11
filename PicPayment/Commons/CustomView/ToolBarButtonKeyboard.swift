@@ -19,7 +19,6 @@ final class ToolBarButtonKeyboard: UIView {
     
     fileprivate lazy var view: UIView = {
         let view = UIView(frame: .zero)
-//        view.backgroundColor = UIColor.backgroundgray
         return view
     }()
     
@@ -46,7 +45,6 @@ final class ToolBarButtonKeyboard: UIView {
     
     private func setupUI() {
         buttonConfirm.layer.cornerRadius = 25.0
-//        buttonConfirm.backgroundColor = UIColor.buttonGreen
         buttonConfirm.addTarget(self, action: #selector(actionConfirm(_:)), for: .touchUpInside)
     }
     
@@ -55,13 +53,16 @@ final class ToolBarButtonKeyboard: UIView {
     }
     
     func configButton(type: TypeButtonKeyboard) {
+        buttonConfirm.setTitleColor(.white, for: .normal)
+        buttonConfirm.backgroundColor = ColorName.green.color
+
         switch type {
         case .enable:
             buttonConfirm.isUserInteractionEnabled = true
-//            buttonConfirm.backgroundColor = UIColor.buttonGreen
         case .disable:
             buttonConfirm.isUserInteractionEnabled = false
-            buttonConfirm.backgroundColor = UIColor.lightGray
+            buttonConfirm.setTitleColor(.darkGray, for: .normal)
+            buttonConfirm.backgroundColor = .gray
         }
     }
     
@@ -92,5 +93,4 @@ extension ToolBarButtonKeyboard: CodeViewProtocol {
         buttonConfirm.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
 
     }
-    
 }
