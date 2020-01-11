@@ -126,6 +126,7 @@ class HomeTransferViewController: UIViewController {
     }
     
     @objc func moneyTextFieldDidChange(_ textField: UITextField) {
+        
         if let amountString = textField.text?.currencyInputFormatting() {
             textField.text = amountString
             self.toolBar.configButton(type: !amountString.isEmpty ? .enable : .disable)

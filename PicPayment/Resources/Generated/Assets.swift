@@ -22,6 +22,7 @@ internal enum Asset {
   internal static let emptyStateContact = ImageAsset(name: "emptyState-contact")
   internal static let icErrorUnexpected = ImageAsset(name: "ic_ error_unexpected")
   internal static let icWireless = ImageAsset(name: "ic_wireless")
+  internal static let iconSplash = ImageAsset(name: "iconSplash")
   internal static let imageProfile = ImageAsset(name: "imageProfile")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

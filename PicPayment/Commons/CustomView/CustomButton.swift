@@ -34,9 +34,9 @@ class CustomButton: UIButton {
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
-        centerActivityIndicatorInButton()
         self.addSubview(activityIndicator)
         layoutButton(.enabled)
+        centerActivityIndicatorInButton()
     }
     
     func setupUI() {
