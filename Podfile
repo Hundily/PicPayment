@@ -15,10 +15,11 @@ target 'PicPayment' do
   pod 'IQKeyboardManager'
   pod 'SwiftLint'
   # Pods for PicPayment
-
+  
   target 'PicPaymentTests' do
-    inherit! :search_paths
-    # Pods for testing
+    pod 'Quick'
+    pod 'Nimble'
+    pod 'OHHTTPStubs/Swift'
   end
 
   target 'PicPaymentUITests' do
