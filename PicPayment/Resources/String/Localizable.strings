@@ -6,8 +6,12 @@
 "totalPaid" = "Total pago";
 "descriptionCreditCard" = "Para fazer pagamentos para outras pessoas você precisa cadastrar um cartão de crédito pessoal.";
 "registerCard" = "Cadastrar cartão";
+"editCard" = "Editar Cartão";
 "saveCreditCard" = "Salvar";
 "payment" = "Pagar";
+"invalidNumber" = "Número inválido";
+"invalidCvv" = "CVV inválido";
+"invalidExpired" = "Validade inválida";
 
 "errorInternetDescription" = "Não foi possível carregar a página no momento";
 "errorFetchPayment" = "Não foi possível realizar o pagamento";

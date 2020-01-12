@@ -24,7 +24,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.117881678" green="0.12132764610000001" blue="0.1333352327" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="bli-Mn-13H" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="HVl-Fj-1Kc"/>
                             <constraint firstItem="bli-Mn-13H" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="tSa-T6-UWl"/>

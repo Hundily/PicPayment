@@ -61,7 +61,7 @@ class RegisterCreditCardFormViewController: UIViewController {
         
         switch state {
         case .edit:
-            labelTitle.text = "Editar Cartão"
+            labelTitle.text = L10n.editCard
             cardNumber.text = card?.cardNumber
             cardCvv.text = card?.cardCvv
             cardName.text = card?.cardName
@@ -85,40 +85,11 @@ class RegisterCreditCardFormViewController: UIViewController {
     }
     
     @objc func didChangeText(textField: UITextField) {
-        guard let textValue = textField.text else { return }
-        textField.text = self.modifyCreditCardString(creditCardString: textValue)
-    }
-    
-    func modifyCreditCardString(creditCardString : String) -> String {
-        let trimmedString = creditCardString.components(separatedBy: .whitespaces).joined()
-        
-        let arrOfCharacters = Array(trimmedString)
-        var modifiedCreditCardString = ""
-        
-        if(arrOfCharacters.count > 0) {
-            for i in 0...arrOfCharacters.count-1 {
-                modifiedCreditCardString.append(arrOfCharacters[i])
-                if((i+1) % 4 == 0 && i+1 != arrOfCharacters.count){
-                    modifiedCreditCardString.append(" ")
-                }
-            }
-        }
-        return modifiedCreditCardString
+        textField.text = String().formatterCreditCard(str: textField.text ?? "")
     }
     
     @objc func expirationDateDidChange() {
-        var dateText = cardExpired.text?.replacingOccurrences(of: "/", with: "") ?? ""
-        dateText = dateText.replacingOccurrences(of: " ", with: "")
-        
-        var newText = ""
-        for (index, character) in dateText.enumerated() {
-            if index == 1 {
-                newText = "\(newText)\(character)/"
-            } else {
-                newText.append(character)
-            }
-        }
-        cardExpired.text = newText
+        cardExpired.text = String().formatterExpirationDate(str: cardExpired.text ?? "")
     }
     
     func checkEnabledButton() {
@@ -128,19 +99,19 @@ class RegisterCreditCardFormViewController: UIViewController {
         cardNumber.errorMessage = ""
         
         guard let inputCardNumber = cardNumber.text, !inputCardNumber.isEmpty else {
-            cardNumber.errorMessage = "Número inválido"
+            cardNumber.errorMessage = L10n.invalidNumber
             return
         }
         
         guard let inputCvv = cardCvv.text, !inputCvv.isEmpty else {
-            cardCvv.errorMessage = "CVV inválido"
+            cardCvv.errorMessage = L10n.invalidCvv
             return
         }
         
         guard let inputCardOwnerName = cardName.text, !inputCardOwnerName.isEmpty else { return }
         
         guard let inputMaturityDate = cardExpired.text, !inputMaturityDate.isEmpty else {
-            cardExpired.errorMessage = "Validade inválida"
+            cardExpired.errorMessage = L10n.invalidExpired
             return
         }
         
@@ -154,7 +125,8 @@ class RegisterCreditCardFormViewController: UIViewController {
 }
 
 extension RegisterCreditCardFormViewController: RegisterCreditCardFormProtocol {
-    func registerCardSuccess() {        self.navigationController?.popViewController(animated: true)
+    func registerCardSuccess() {
+        self.navigationController?.popViewController(animated: true)
     }
     
     func registerCardError() {

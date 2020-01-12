@@ -15,6 +15,8 @@ internal enum L10n {
   internal static let contacts = L10n.tr("Localizable", "contacts")
   /// Para fazer pagamentos para outras pessoas você precisa cadastrar um cartão de crédito pessoal.
   internal static let descriptionCreditCard = L10n.tr("Localizable", "descriptionCreditCard")
+  /// Editar Cartão
+  internal static let editCard = L10n.tr("Localizable", "editCard")
   /// Não foi possível encontrar os contatos.
   internal static let errorEmptyStateDescriptionContact = L10n.tr("Localizable", "errorEmptyStateDescriptionContact")
   /// Não foi possível realizar o pagamento nesse momento.
@@ -31,6 +33,12 @@ internal enum L10n {
   internal static let errorUnexpectedDescription = L10n.tr("Localizable", "errorUnexpectedDescription")
   /// Erro inesperado
   internal static let errorUnexpectedTitle = L10n.tr("Localizable", "errorUnexpectedTitle")
+  /// CVV inválido
+  internal static let invalidCvv = L10n.tr("Localizable", "invalidCvv")
+  /// Validade inválida
+  internal static let invalidExpired = L10n.tr("Localizable", "invalidExpired")
+  /// Número inválido
+  internal static let invalidNumber = L10n.tr("Localizable", "invalidNumber")
   /// Pagar
   internal static let payment = L10n.tr("Localizable", "payment")
   /// Recibo

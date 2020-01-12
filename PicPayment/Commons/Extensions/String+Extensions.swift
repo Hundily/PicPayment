@@ -94,8 +94,7 @@ extension String {
         
         let double = (amountWithPrefix as NSString).doubleValue
         number = NSNumber(value: (double / 100))
-        
-        // if first number is 0 or all numbers were deleted
+
         guard number != 0 as NSNumber else {
             return ""
         }
@@ -103,46 +102,35 @@ extension String {
         return formatter.string(from: number)!
     }
     
-    func modifyCreditCardString() -> String {
-        let trimmedString = self.components(separatedBy: .whitespaces).joined()
+    func formatterCreditCard(str: String) -> String {
+        let trimmedString = str.components(separatedBy: .whitespaces).joined()
         
         let arrOfCharacters = Array(trimmedString)
-        var modifiedCreditCardString = ""
+        var strFormatter = ""
         
         if(arrOfCharacters.count > 0) {
             for i in 0...arrOfCharacters.count-1 {
-                modifiedCreditCardString.append(arrOfCharacters[i])
+                strFormatter.append(arrOfCharacters[i])
                 if((i+1) % 4 == 0 && i+1 != arrOfCharacters.count){
-                    modifiedCreditCardString.append(" ")
+                    strFormatter.append(" ")
                 }
             }
         }
-        return modifiedCreditCardString
+        return strFormatter
     }
-}
-
-extension Locale {
-    static let br = Locale(identifier: "pt_BR")
-    static let us = Locale(identifier: "en_US")
-    static let uk = Locale(identifier: "en_UK")
-}
-
-extension NumberFormatter {
-    convenience init(style: Style, locale: Locale = .current) {
-        self.init()
-        self.locale = locale
-        numberStyle = style
+    
+    func formatterExpirationDate(str: String) -> String {
+        var dateText = str.replacingOccurrences(of: "/", with: "")
+        dateText = dateText.replacingOccurrences(of: " ", with: "")
+        
+        var newText = ""
+        for (index, character) in dateText.enumerated() {
+            if index == 1 {
+                newText = "\(newText)\(character)/"
+            } else {
+                newText.append(character)
+            }
+        }
+        return newText
     }
-}
-
-extension Formatter {
-    static let currency = NumberFormatter(style: .currency)
-    static let currencyUS = NumberFormatter(style: .currency, locale: .us)
-    static let currencyBR = NumberFormatter(style: .currency, locale: .br)
-}
-
-extension Numeric {
-    var currency: String { Formatter.currency.string(for: self) ?? "" }
-    var currencyUS: String { Formatter.currencyUS.string(for: self) ?? "" }
-    var currencyBR: String { Formatter.currencyBR.string(for: self) ?? "" }
 }
