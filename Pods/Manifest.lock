@@ -1,11 +1,26 @@
 PODS:
-  - Alamofire (4.8.2)
-  - FittedSheets (1.4.4)
-  - IQKeyboardManager (6.4.0)
-  - lottie-ios (3.1.2)
-  - SkyFloatingLabelTextField (3.7.0)
-  - SnapKit (5.0.0)
-  - SwiftDate (6.0.3)
+  - Alamofire (4.9.1)
+  - FittedSheets (1.4.5)
+  - IQKeyboardManager (6.5.4)
+  - lottie-ios (3.1.5)
+  - Nimble (8.0.4)
+  - OHHTTPStubs/Core (8.0.0)
+  - OHHTTPStubs/Default (8.0.0):
+    - OHHTTPStubs/Core
+    - OHHTTPStubs/JSON
+    - OHHTTPStubs/NSURLSession
+    - OHHTTPStubs/OHPathHelpers
+  - OHHTTPStubs/JSON (8.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/NSURLSession (8.0.0):
+    - OHHTTPStubs/Core
+  - OHHTTPStubs/OHPathHelpers (8.0.0)
+  - OHHTTPStubs/Swift (8.0.0):
+    - OHHTTPStubs/Default
+  - Quick (2.2.0)
+  - SkyFloatingLabelTextField (3.8.0)
+  - SnapKit (5.0.1)
+  - SwiftDate (6.1.0)
   - SwiftGen (6.1.0)
   - SwiftLint (0.38.2)
 
@@ -14,6 +29,9 @@ DEPENDENCIES:
   - FittedSheets
   - IQKeyboardManager
   - lottie-ios
+  - Nimble (from `https://github.com/Quick/Nimble.git`, branch `master`)
+  - OHHTTPStubs/Swift
+  - Quick
   - SkyFloatingLabelTextField
   - SnapKit
   - SwiftDate
@@ -26,23 +44,38 @@ SPEC REPOS:
     - FittedSheets
     - IQKeyboardManager
     - lottie-ios
+    - OHHTTPStubs
+    - Quick
     - SkyFloatingLabelTextField
     - SnapKit
     - SwiftDate
     - SwiftGen
     - SwiftLint
 
+EXTERNAL SOURCES:
+  Nimble:
+    :branch: master
+    :git: https://github.com/Quick/Nimble.git
+
+CHECKOUT OPTIONS:
+  Nimble:
+    :commit: 795fb77fe534f7514e2801bf8581b40597d1110c
+    :git: https://github.com/Quick/Nimble.git
+
 SPEC CHECKSUMS:
-  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
-  FittedSheets: f56b96c7bd81585d9a183c2a06abe176fa0b55db
-  IQKeyboardManager: fcef267266379c003181fc3592f6bdb8bf4db839
-  lottie-ios: 49cd85b1f24f61a7708ad7ec76a523ab2d0e3100
-  SkyFloatingLabelTextField: 4b46db0ab1ccde0919cded29c656e6b4805eda04
-  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
-  SwiftDate: 8d4f14bf1ef68e95094511504856547bf9e3e1a6
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
+  FittedSheets: 7f754c9f6fb4ea330cbc57c652b594255f2a6819
+  IQKeyboardManager: 72b359cd7e777e3a984cedbe05f8da45320cbb63
+  lottie-ios: 32bf84389337d86fbc8b12266e88452e0abf1dee
+  Nimble: 66110543b37eed1302fa50f2ad411f22d2548373
+  OHHTTPStubs: 9cbce6364bec557cc3439aa6bb7514670d780881
+  Quick: 7fb19e13be07b5dfb3b90d4f9824c855a11af40e
+  SkyFloatingLabelTextField: 5a338412114808e961fe2d14ea2c5452c8b6e4aa
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftDate: fa2bb3962056bb44047b4b85a30044e5eae30b03
   SwiftGen: f872ca75cbd17bf7103c17f13dcfa0d9a15667b0
   SwiftLint: 8f5d2f903e1c9bcbc832fd16771e80a263ac6cbb
 
-PODFILE CHECKSUM: 4a2e65cf4f839b683b843d0c3465d2afbbe53020
+PODFILE CHECKSUM: 68000a1838e4ca615963ff36e5d5f6b266b636af
 
 COCOAPODS: 1.8.4

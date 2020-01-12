@@ -116,7 +116,7 @@ class PaymentViewController: UIViewController {
     
     @IBAction func actionPayment(_ sender: Any) {
         let cardFormat = creditCard?.cardNumber.replacingOccurrences(of: " ", with: "", options: .literal, range: nil) ?? ""
-        let valueTransaction = inputValue.text?.replacingOccurrences(of: "R$", with: "", options: .literal, range: nil) ?? ""
+//        let valueTransaction = inputValue.text?.replacingOccurrences(of: "R$", with: "", options: .literal, range: nil) ?? ""
         
         let paymentModel = Payment(card_number: cardFormat, cvv: Int(creditCard?.cardCvv ?? "") ?? 0, value: 41.2, expiry_date: creditCard?.cardExpired ?? "", destination_user_id: contact?.id ?? 0)
         
