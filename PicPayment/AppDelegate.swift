@@ -11,25 +11,23 @@ import IQKeyboardManager
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-  var window: UIWindow?
-  var applicationCoordinator: ApplicationCoordinator?
-
-
-  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-   
-    IQKeyboardManager.shared().isEnabled = true
-
-    self.window = UIWindow(frame: UIScreen.main.bounds)
     
-    let router = Router(rootController: self.window!)
-    applicationCoordinator = ApplicationCoordinator(router: router)
-    applicationCoordinator?.start()
-
-    self.window?.makeKeyAndVisible()
+    var window: UIWindow?
+    var applicationCoordinator: ApplicationCoordinator?
     
-    return true
-  }
-
+    
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        
+        IQKeyboardManager.shared().isEnabled = true
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let splashViewController = SplashViewController()
+        self.window?.rootViewController = UINavigationController(rootViewController: splashViewController)
+        
+        window?.makeKeyAndVisible()
+        
+        return true
+    }
 }
 
