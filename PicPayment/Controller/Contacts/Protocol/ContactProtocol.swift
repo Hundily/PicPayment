@@ -9,4 +9,6 @@
 protocol ContactProtocol: AnyObject {
     func show()
     func show(error: Error)
+    func routerPayment(contact: Contact, creditCard: CreditCard)
+    func routerHomeCreditCard(contact: Contact)
 }

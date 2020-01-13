@@ -31,7 +31,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Número do cartão" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lHh-Yc-uPc" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="20" y="114" width="335" height="34"/>
+                    <rect key="frame" x="20" y="114" width="335" height="41.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
@@ -59,7 +59,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nome do títular" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wEt-NF-qib" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="20" y="216" width="335" height="34"/>
+                    <rect key="frame" x="20" y="223.5" width="335" height="41.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>
@@ -87,7 +87,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Vencimento" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RWl-yy-xsp" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="20" y="318" width="126" height="34"/>
+                    <rect key="frame" x="20" y="333" width="126" height="42"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="126" id="S5j-YH-DeL"/>
                     </constraints>
@@ -118,7 +118,7 @@
                     </userDefinedRuntimeAttributes>
                 </textField>
                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="CVV" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mha-9T-2Mv" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
-                    <rect key="frame" x="193" y="318" width="162" height="34"/>
+                    <rect key="frame" x="193" y="333" width="162" height="42"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <textInputTraits key="textInputTraits"/>
                     <userDefinedRuntimeAttributes>

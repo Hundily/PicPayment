@@ -41,6 +41,8 @@
 		A03CE1A623CAA87700375306 /* ContactsWebserviceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CE1A523CAA87700375306 /* ContactsWebserviceSpec.swift */; };
 		A03CE1A923CAAAEE00375306 /* PaymentResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = A03CE1A823CAAAEE00375306 /* PaymentResponse.json */; };
 		A03CE1AB23CAAB1600375306 /* PaymentWebserviceSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CE1AA23CAAB1600375306 /* PaymentWebserviceSpec.swift */; };
+		A03CE1AF23CBC54700375306 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03CE1AD23CBC54700375306 /* SplashViewController.swift */; };
+		A03CE1B023CBC54700375306 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A03CE1AE23CBC54700375306 /* SplashViewController.xib */; };
 		A04AD46023B51F26006470CE /* Payment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04AD45F23B51F26006470CE /* Payment.swift */; };
 		A084AC0923C66EDA0059AD5B /* RegisterCreditCardHomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A084AC0123C66EDA0059AD5B /* RegisterCreditCardHomeViewController.xib */; };
 		A084AC0A23C66EDA0059AD5B /* RegisterCreditCardHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084AC0223C66EDA0059AD5B /* RegisterCreditCardHomeViewController.swift */; };
@@ -168,6 +170,8 @@
 		A03CE1A523CAA87700375306 /* ContactsWebserviceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsWebserviceSpec.swift; sourceTree = "<group>"; };
 		A03CE1A823CAAAEE00375306 /* PaymentResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PaymentResponse.json; sourceTree = "<group>"; };
 		A03CE1AA23CAAB1600375306 /* PaymentWebserviceSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentWebserviceSpec.swift; sourceTree = "<group>"; };
+		A03CE1AD23CBC54700375306 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		A03CE1AE23CBC54700375306 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		A04AD45F23B51F26006470CE /* Payment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Payment.swift; sourceTree = "<group>"; };
 		A084AC0123C66EDA0059AD5B /* RegisterCreditCardHomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterCreditCardHomeViewController.xib; sourceTree = "<group>"; };
 		A084AC0223C66EDA0059AD5B /* RegisterCreditCardHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterCreditCardHomeViewController.swift; sourceTree = "<group>"; };
@@ -346,6 +350,7 @@
 		6818C07722B48E4E00F04928 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A03CE1AC23CBC52D00375306 /* Splash */,
 				A0E172E023CA259B00BC5142 /* Payment */,
 				A084AC1123C761510059AD5B /* Receipt */,
 				A084ABFF23C66EDA0059AD5B /* Register CreditCard */,
@@ -487,6 +492,15 @@
 				A03CE1AA23CAAB1600375306 /* PaymentWebserviceSpec.swift */,
 			);
 			path = Payment;
+			sourceTree = "<group>";
+		};
+		A03CE1AC23CBC52D00375306 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				A03CE1AD23CBC54700375306 /* SplashViewController.swift */,
+				A03CE1AE23CBC54700375306 /* SplashViewController.xib */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		A084ABF823C66E3A0059AD5B /* Presenter */ = {
@@ -947,6 +961,7 @@
 				68CCDFE022B5816B0077F31A /* SFUIText-MediumItalic.ttf in Resources */,
 				68CCDFE222B5816B0077F31A /* SFUIText-LightItalic.ttf in Resources */,
 				6818C02A22B47CF500F04928 /* Assets.xcassets in Resources */,
+				A03CE1B023CBC54700375306 /* SplashViewController.xib in Resources */,
 				6818C08122B57B4B00F04928 /* Colors.json in Resources */,
 				68CCDFE722B5816B0077F31A /* SFUIText-Heavy.ttf in Resources */,
 				B2C6D33422B7520500187D05 /* loading_new.json in Resources */,
@@ -1100,6 +1115,7 @@
 				A084AC1823C761510059AD5B /* ReceiptViewController.swift in Sources */,
 				B204A7A622B6C6C700FD0BE1 /* ContactPresenter.swift in Sources */,
 				B204A76822B6AB0800FD0BE1 /* Strings.swift in Sources */,
+				A03CE1AF23CBC54700375306 /* SplashViewController.swift in Sources */,
 				A089D609232983F5003D1169 /* Region+Extensions.swift in Sources */,
 				B204A79F22B6C42700FD0BE1 /* Contact.swift in Sources */,
 				A0E172E323CA25B200BC5142 /* PaymentViewController.swift in Sources */,
