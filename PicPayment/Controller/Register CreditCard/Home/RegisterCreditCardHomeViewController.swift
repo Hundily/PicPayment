@@ -26,16 +26,16 @@ class RegisterCreditCardHomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.topItem?.title = " "
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.topItem?.title = " "
-        navigationController?.navigationBar.tintColor = ColorName.green.color
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
     @IBAction func actionGoRegisterForm(_ sender: Any) {
         let modalViewController = RegisterCreditCardFormViewController(contact: nil, state: .register)
-        navigationController?.pushViewController(modalViewController, animated: true)
+        self.navigationController?.pushViewController(modalViewController, animated: true)
     }
 }

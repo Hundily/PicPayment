@@ -47,13 +47,12 @@ class RegisterCreditCardFormViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupLayout()
+        setupNavigationLayout()
         setDelegate()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.navigationBar.topItem?.title = " "
-        navigationController?.navigationBar.tintColor = ColorName.green.color
     }
     
     private func setupLayout() {
@@ -69,6 +68,13 @@ class RegisterCreditCardFormViewController: UIViewController {
         default:
             return
         }
+    }
+    
+    private func setupNavigationLayout() {
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        navigationController?.navigationBar.topItem?.title = " "
+        navigationController?.navigationBar.tintColor = ColorName.green.color
+        navigationController?.navigationBar.barTintColor = ColorName.backgroundDefault.color
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -126,7 +132,7 @@ class RegisterCreditCardFormViewController: UIViewController {
 
 extension RegisterCreditCardFormViewController: RegisterCreditCardFormProtocol {
     func registerCardSuccess() {
-        self.navigationController?.popViewController(animated: true)
+        dismiss(animated: true)
     }
     
     func registerCardError() {
