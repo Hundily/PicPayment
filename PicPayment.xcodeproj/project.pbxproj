@@ -52,7 +52,6 @@
 		A084AC1023C672820059AD5B /* RegisterCreditCardFormProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084AC0F23C672820059AD5B /* RegisterCreditCardFormProtocol.swift */; };
 		A084AC1723C761510059AD5B /* ReceiptViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A084AC1523C761510059AD5B /* ReceiptViewController.xib */; };
 		A084AC1823C761510059AD5B /* ReceiptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084AC1623C761510059AD5B /* ReceiptViewController.swift */; };
-		A084AC1E23C765400059AD5B /* RegisterCreditCardCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A084AC1D23C765400059AD5B /* RegisterCreditCardCoordinator.swift */; };
 		A089D603232981BC003D1169 /* PaymentReceipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = A089D602232981BC003D1169 /* PaymentReceipt.swift */; };
 		A089D608232983F5003D1169 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A089D606232983F5003D1169 /* String+Extensions.swift */; };
 		A089D609232983F5003D1169 /* Region+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A089D607232983F5003D1169 /* Region+Extensions.swift */; };
@@ -79,19 +78,8 @@
 		B204A76F22B6ACAD00FD0BE1 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A76E22B6ACAD00FD0BE1 /* UIViewController+Extensions.swift */; };
 		B204A77122B6B06900FD0BE1 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A77022B6B06900FD0BE1 /* UIView+Extensions.swift */; };
 		B204A77422B6B09700FD0BE1 /* CodeViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A77322B6B09700FD0BE1 /* CodeViewProtocol.swift */; };
-		B204A77922B6B34300FD0BE1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A77822B6B34300FD0BE1 /* Coordinator.swift */; };
 		B204A77C22B6B36000FD0BE1 /* ControllerProtocol+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A77B22B6B36000FD0BE1 /* ControllerProtocol+UIKit.swift */; };
 		B204A77E22B6B37500FD0BE1 /* ControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A77D22B6B37500FD0BE1 /* ControllerProtocol.swift */; };
-		B204A78122B6B39F00FD0BE1 /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A78022B6B39F00FD0BE1 /* Presentable.swift */; };
-		B204A78322B6B3AE00FD0BE1 /* Presentable+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A78222B6B3AE00FD0BE1 /* Presentable+UIKit.swift */; };
-		B204A78B22B6B3CC00FD0BE1 /* TabNavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A78522B6B3CC00FD0BE1 /* TabNavigationRouter.swift */; };
-		B204A78C22B6B3CC00FD0BE1 /* NavigationRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A78622B6B3CC00FD0BE1 /* NavigationRouterProtocol.swift */; };
-		B204A78D22B6B3CC00FD0BE1 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A78722B6B3CC00FD0BE1 /* NavigationRouter.swift */; };
-		B204A78E22B6B3CC00FD0BE1 /* TabNavigationRouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A78822B6B3CC00FD0BE1 /* TabNavigationRouterProtocol.swift */; };
-		B204A78F22B6B3CC00FD0BE1 /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A78922B6B3CC00FD0BE1 /* RouterProtocol.swift */; };
-		B204A79022B6B3CC00FD0BE1 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A78A22B6B3CC00FD0BE1 /* Router.swift */; };
-		B204A79322B6B3FD00FD0BE1 /* ContactsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A79222B6B3FD00FD0BE1 /* ContactsCoordinator.swift */; };
-		B204A79522B6B41400FD0BE1 /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A79422B6B41400FD0BE1 /* ApplicationCoordinator.swift */; };
 		B204A79822B6B5DE00FD0BE1 /* ContactViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A79722B6B5DE00FD0BE1 /* ContactViewCell.swift */; };
 		B204A79A22B6B85B00FD0BE1 /* UITableView+ReusableUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A79922B6B85B00FD0BE1 /* UITableView+ReusableUtils.swift */; };
 		B204A79C22B6B87500FD0BE1 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = B204A79B22B6B87500FD0BE1 /* Identifier.swift */; };
@@ -181,7 +169,6 @@
 		A084AC0F23C672820059AD5B /* RegisterCreditCardFormProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCreditCardFormProtocol.swift; sourceTree = "<group>"; };
 		A084AC1523C761510059AD5B /* ReceiptViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceiptViewController.xib; sourceTree = "<group>"; };
 		A084AC1623C761510059AD5B /* ReceiptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceiptViewController.swift; sourceTree = "<group>"; };
-		A084AC1D23C765400059AD5B /* RegisterCreditCardCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterCreditCardCoordinator.swift; sourceTree = "<group>"; };
 		A089D602232981BC003D1169 /* PaymentReceipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentReceipt.swift; sourceTree = "<group>"; };
 		A089D606232983F5003D1169 /* String+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A089D607232983F5003D1169 /* Region+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Region+Extensions.swift"; sourceTree = "<group>"; };
@@ -208,19 +195,8 @@
 		B204A76E22B6ACAD00FD0BE1 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		B204A77022B6B06900FD0BE1 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B204A77322B6B09700FD0BE1 /* CodeViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeViewProtocol.swift; sourceTree = "<group>"; };
-		B204A77822B6B34300FD0BE1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		B204A77B22B6B36000FD0BE1 /* ControllerProtocol+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ControllerProtocol+UIKit.swift"; sourceTree = "<group>"; };
 		B204A77D22B6B37500FD0BE1 /* ControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerProtocol.swift; sourceTree = "<group>"; };
-		B204A78022B6B39F00FD0BE1 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
-		B204A78222B6B3AE00FD0BE1 /* Presentable+UIKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Presentable+UIKit.swift"; sourceTree = "<group>"; };
-		B204A78522B6B3CC00FD0BE1 /* TabNavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabNavigationRouter.swift; sourceTree = "<group>"; };
-		B204A78622B6B3CC00FD0BE1 /* NavigationRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouterProtocol.swift; sourceTree = "<group>"; };
-		B204A78722B6B3CC00FD0BE1 /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
-		B204A78822B6B3CC00FD0BE1 /* TabNavigationRouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabNavigationRouterProtocol.swift; sourceTree = "<group>"; };
-		B204A78922B6B3CC00FD0BE1 /* RouterProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
-		B204A78A22B6B3CC00FD0BE1 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		B204A79222B6B3FD00FD0BE1 /* ContactsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactsCoordinator.swift; sourceTree = "<group>"; };
-		B204A79422B6B41400FD0BE1 /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		B204A79722B6B5DE00FD0BE1 /* ContactViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewCell.swift; sourceTree = "<group>"; };
 		B204A79922B6B85B00FD0BE1 /* UITableView+ReusableUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReusableUtils.swift"; sourceTree = "<group>"; };
 		B204A79B22B6B87500FD0BE1 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
@@ -306,8 +282,7 @@
 				A0E1730223CA7D7B00BC5142 /* Environment */,
 				A0E1730623CA7D7B00BC5142 /* Network */,
 				B204A79D22B6C41D00FD0BE1 /* Model */,
-				B204A79122B6B3EE00FD0BE1 /* Flow */,
-				B204A77722B6B32800FD0BE1 /* Coordinators */,
+				B204A77722B6B32800FD0BE1 /* Navigation */,
 				B204A76C22B6AC8600FD0BE1 /* Commons */,
 				6818C07B22B57B0600F04928 /* Resources */,
 				6818C07722B48E4E00F04928 /* Controller */,
@@ -720,15 +695,12 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		B204A77722B6B32800FD0BE1 /* Coordinators */ = {
+		B204A77722B6B32800FD0BE1 /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				B204A78422B6B3BC00FD0BE1 /* Router */,
-				B204A77F22B6B38A00FD0BE1 /* Presentable */,
 				B204A77A22B6B35700FD0BE1 /* Controller */,
-				B204A77822B6B34300FD0BE1 /* Coordinator.swift */,
 			);
-			path = Coordinators;
+			path = Navigation;
 			sourceTree = "<group>";
 		};
 		B204A77A22B6B35700FD0BE1 /* Controller */ = {
@@ -738,38 +710,6 @@
 				B204A77D22B6B37500FD0BE1 /* ControllerProtocol.swift */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		B204A77F22B6B38A00FD0BE1 /* Presentable */ = {
-			isa = PBXGroup;
-			children = (
-				B204A78022B6B39F00FD0BE1 /* Presentable.swift */,
-				B204A78222B6B3AE00FD0BE1 /* Presentable+UIKit.swift */,
-			);
-			path = Presentable;
-			sourceTree = "<group>";
-		};
-		B204A78422B6B3BC00FD0BE1 /* Router */ = {
-			isa = PBXGroup;
-			children = (
-				B204A78722B6B3CC00FD0BE1 /* NavigationRouter.swift */,
-				B204A78622B6B3CC00FD0BE1 /* NavigationRouterProtocol.swift */,
-				B204A78A22B6B3CC00FD0BE1 /* Router.swift */,
-				B204A78922B6B3CC00FD0BE1 /* RouterProtocol.swift */,
-				B204A78522B6B3CC00FD0BE1 /* TabNavigationRouter.swift */,
-				B204A78822B6B3CC00FD0BE1 /* TabNavigationRouterProtocol.swift */,
-			);
-			path = Router;
-			sourceTree = "<group>";
-		};
-		B204A79122B6B3EE00FD0BE1 /* Flow */ = {
-			isa = PBXGroup;
-			children = (
-				B204A79222B6B3FD00FD0BE1 /* ContactsCoordinator.swift */,
-				B204A79422B6B41400FD0BE1 /* ApplicationCoordinator.swift */,
-				A084AC1D23C765400059AD5B /* RegisterCreditCardCoordinator.swift */,
-			);
-			path = Flow;
 			sourceTree = "<group>";
 		};
 		B204A79622B6B5D000FD0BE1 /* View */ = {
@@ -1121,16 +1061,12 @@
 				A0E172E323CA25B200BC5142 /* PaymentViewController.swift in Sources */,
 				B204A7A222B6C4B700FD0BE1 /* ContactService.swift in Sources */,
 				B204A76A22B6AB0800FD0BE1 /* Fonts.swift in Sources */,
-				B204A78D22B6B3CC00FD0BE1 /* NavigationRouter.swift in Sources */,
 				B204A79C22B6B87500FD0BE1 /* Identifier.swift in Sources */,
 				A04AD46023B51F26006470CE /* Payment.swift in Sources */,
 				B204A76B22B6AB0800FD0BE1 /* Colors.swift in Sources */,
-				B204A79522B6B41400FD0BE1 /* ApplicationCoordinator.swift in Sources */,
-				B204A78C22B6B3CC00FD0BE1 /* NavigationRouterProtocol.swift in Sources */,
 				B204A76922B6AB0800FD0BE1 /* Assets.swift in Sources */,
 				A0E1731123CA7D7B00BC5142 /* WebserviceError.swift in Sources */,
 				A0371643238F000D00D60250 /* CreditCard.swift in Sources */,
-				B204A79322B6B3FD00FD0BE1 /* ContactsCoordinator.swift in Sources */,
 				A089D603232981BC003D1169 /* PaymentReceipt.swift in Sources */,
 				B204A7AE22B739BC00FD0BE1 /* ContactListCellType.swift in Sources */,
 				A0E172EB23CA263E00BC5142 /* PaymentProtocol.swift in Sources */,
@@ -1140,15 +1076,12 @@
 				B204A7B022B73C9100FD0BE1 /* ContactErrorViewCell.swift in Sources */,
 				A0E1731323CA7D7B00BC5142 /* Webservice.swift in Sources */,
 				B204A79A22B6B85B00FD0BE1 /* UITableView+ReusableUtils.swift in Sources */,
-				B204A78322B6B3AE00FD0BE1 /* Presentable+UIKit.swift in Sources */,
 				B204A79822B6B5DE00FD0BE1 /* ContactViewCell.swift in Sources */,
-				B204A78F22B6B3CC00FD0BE1 /* RouterProtocol.swift in Sources */,
 				B204A7AC22B72C6D00FD0BE1 /* UISearchBar+Extensions.swift in Sources */,
 				B2C6D32B22B7467000187D05 /* ManagerError.swift in Sources */,
 				B204A77122B6B06900FD0BE1 /* UIView+Extensions.swift in Sources */,
 				B2C6D33222B750C700187D05 /* LoadingManager.swift in Sources */,
 				B2C6D32F22B750A900187D05 /* LoadingViewCell.swift in Sources */,
-				B204A77922B6B34300FD0BE1 /* Coordinator.swift in Sources */,
 				B204A77422B6B09700FD0BE1 /* CodeViewProtocol.swift in Sources */,
 				B204A76F22B6ACAD00FD0BE1 /* UIViewController+Extensions.swift in Sources */,
 				A0E1731423CA7D7B00BC5142 /* DefaultSessionManager.swift in Sources */,
@@ -1157,24 +1090,19 @@
 				A084AC0A23C66EDA0059AD5B /* RegisterCreditCardHomeViewController.swift in Sources */,
 				A084AC1023C672820059AD5B /* RegisterCreditCardFormProtocol.swift in Sources */,
 				A0CC87A923C79DB400DCBF88 /* PaymentResponse.swift in Sources */,
-				B204A78E22B6B3CC00FD0BE1 /* TabNavigationRouterProtocol.swift in Sources */,
 				A089D608232983F5003D1169 /* String+Extensions.swift in Sources */,
 				B204A77C22B6B36000FD0BE1 /* ControllerProtocol+UIKit.swift in Sources */,
 				6818C02322B47CF300F04928 /* AppDelegate.swift in Sources */,
 				B2C6D32722B7454C00187D05 /* ErrorView.swift in Sources */,
 				A0E1731623CA7D7B00BC5142 /* ParamsBuilder.swift in Sources */,
 				A0E1730E23CA7D7B00BC5142 /* Environment.swift in Sources */,
-				B204A79022B6B3CC00FD0BE1 /* Router.swift in Sources */,
 				A0E1731223CA7D7B00BC5142 /* HTTPMethod.swift in Sources */,
 				B204A7A822B6C71200FD0BE1 /* ContactProtocol.swift in Sources */,
 				6818C07A22B48E6200F04928 /* ContactsViewController.swift in Sources */,
 				A084AC0B23C66EDA0059AD5B /* RegisterCreditCardFormViewController.swift in Sources */,
 				A084AC0E23C671580059AD5B /* RegisterCreditCardFormPresenter.swift in Sources */,
 				B204A7AA22B6CD0500FD0BE1 /* UIImage+Extensions.swift in Sources */,
-				B204A78B22B6B3CC00FD0BE1 /* TabNavigationRouter.swift in Sources */,
 				A001576823B577EC0009BB3F /* PaymentService.swift in Sources */,
-				A084AC1E23C765400059AD5B /* RegisterCreditCardCoordinator.swift in Sources */,
-				B204A78122B6B39F00FD0BE1 /* Presentable.swift in Sources */,
 				A0CC87AB23C8E82000DCBF88 /* ToolBarButtonKeyboard.swift in Sources */,
 				A0E1731023CA7D7B00BC5142 /* Configuration.swift in Sources */,
 				A0E1730F23CA7D7B00BC5142 /* API.swift in Sources */,

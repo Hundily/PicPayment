@@ -193,5 +193,3 @@ extension ContactsViewController: ContactProtocol {
         self.navigationController?.present(navController, style: .present(animated: true))
     }
 }
-
-extension ContactsViewController: NavigationTransitionEffect { }
