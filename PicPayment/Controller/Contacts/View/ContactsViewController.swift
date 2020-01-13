@@ -111,7 +111,7 @@ extension ContactsViewController: UITableViewDelegate {
         let contactType = presenter.getContact(by: indexPath.row)
         switch contactType {
         case let .cell(contact):
-            didRequestToNextView?(contact)
+            presenter.handleTapOnContact(contact)
         default:
             break
         }
@@ -181,6 +181,16 @@ extension ContactsViewController: ContactProtocol {
     
     func show(error: Error) {
         print(error.localizedDescription)
+    }
+    
+    func routerPayment(contact: Contact, creditCard: CreditCard) {
+        let payment = PaymentViewController(contact: contact, creditCard: creditCard)
+        self.navigationController?.present(payment, style: .push(animated: true))
+    }
+    
+    func routerHomeCreditCard(contact: Contact) {
+        let navController = UINavigationController(rootViewController: RegisterCreditCardHomeViewController(contact: contact))
+        self.navigationController?.present(navController, style: .present(animated: true))
     }
 }
 
