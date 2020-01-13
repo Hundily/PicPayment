@@ -29,13 +29,13 @@ class SplashViewController: UIViewController {
     }
     
     private func setupAnimation() {
-        UIView.animate(withDuration: 5, animations: {
+        UIView.animate(withDuration: 2.5, animations: {
             self.labelDeveloped.alpha = 1
             self.view.layoutIfNeeded()
         }) { (na) in
             let nav = UINavigationController(rootViewController: ContactsViewController())
-            self.navigationController?.present(nav, style: .present(animated: false))
-//            self.navigationController?.present(nav, animated: false, completion: nil)
+            nav.modalPresentationStyle = .fullScreen
+            self.navigationController?.present(nav, style: .present(animated: true))
         }
     }
 }
