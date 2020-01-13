@@ -84,7 +84,6 @@ extension ContactPresenter {
     }
     
     func handleTapOnContact(_ contact: Contact) {
-        print(contact)
         if let creditCard = UserDefaults.standard.object(forKey: "CREDIT_CARD") as? Data {
             let decoder = JSONDecoder()
             if let creditCardParse = try? decoder.decode(CreditCard.self, from: creditCard) {
