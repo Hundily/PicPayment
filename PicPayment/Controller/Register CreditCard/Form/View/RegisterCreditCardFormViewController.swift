@@ -57,6 +57,7 @@ class RegisterCreditCardFormViewController: UIViewController {
     }
     
     private func setupLayout() {
+        buttonRegisterCreditCard.layoutButton(.disabled)
         let card = presenter.getCard()
         
         switch state {
