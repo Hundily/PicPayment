@@ -19,6 +19,7 @@ class PaymentViewController: UIViewController {
     @IBOutlet weak var creditCardInfos: UILabel!
     @IBOutlet weak var buttonPayment: CustomButton!
     private var creditCard: CreditCard?
+    private var creditCardLastFourNumber: String = ""
     private var contact: Contact?
     private let kPaymentViewController = "PaymentViewController"
 
@@ -80,6 +81,7 @@ class PaymentViewController: UIViewController {
         imageContact.imageFromURL(urlString: self.contact?.img ?? "")
         labelNickName.text = self.contact?.username
         let last4 = String(self.creditCard?.cardNumber.suffix(4) ?? "")
+        creditCardLastFourNumber = last4
         creditCardInfos.text = "MasterCard \(last4)"
     }
     
@@ -115,11 +117,12 @@ class PaymentViewController: UIViewController {
     }
     
     @IBAction func actionPayment(_ sender: Any) {
+        guard let value = inputValue.text else  { return }
         let cardFormat = creditCard?.cardNumber.replacingOccurrences(of: " ", with: "", options: .literal, range: nil) ?? ""
-        let paymentModel = Payment(card_number: cardFormat, cvv: Int(creditCard?.cardCvv ?? "") ?? 0, value: 41.2, expiry_date: creditCard?.cardExpired ?? "", destination_user_id: contact?.id ?? 0)
-        
-        print("paymentModel", paymentModel)
-        
+        let valueParse = value.replacingOccurrences(of: "R$", with: "", options: .literal, range: nil)
+        let valueParse2 = valueParse.trimmingCharacters(in: .whitespaces)
+        let paymentModel = Payment(card_number: cardFormat, cvv: Int(creditCard?.cardCvv ?? "") ?? 0, value: Double(valueParse2) ?? 0, expiry_date: creditCard?.cardExpired ?? "", destination_user_id: contact?.id ?? 0)
+                
         presenter.fetchPayment(payment: paymentModel)
     }
     
@@ -133,8 +136,10 @@ class PaymentViewController: UIViewController {
 }
 
 extension PaymentViewController: PaymentProtocol {
-    func goReceiptView() {
-        let controller = ReceiptViewController()
+
+    func showReceiptView(receipt: PaymentReceipt?)  {
+        guard let receipt = receipt else { return }
+        let controller = ReceiptViewController(receipt: receipt)
         let sheetController = SheetViewController(controller: controller, sizes: [.fixed(600), .fullScreen])
         sheetController.topCornersRadius = 15
         self.present(sheetController, animated: false, completion: nil)

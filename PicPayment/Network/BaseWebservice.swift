@@ -35,7 +35,7 @@ struct BaseWebservice: Webservice {
         }
         
         var alamofireHeaders = headers
-        alamofireHeaders["Content-Type"] = "application/x-www-form-urlencoded"
+        alamofireHeaders["Content-Type"] = "application/json"
         
         let httpMethod = alamofireMethod(with: method)
         
