@@ -133,7 +133,12 @@ class RegisterCreditCardFormViewController: UIViewController {
 
 extension RegisterCreditCardFormViewController: RegisterCreditCardFormProtocol {
     func registerCardSuccess() {
-        dismiss(animated: true)
+        switch state {
+        case .register:
+            dismiss(animated: true)
+        case .edit:
+            navigationController?.popViewController(animated: true)
+        }
     }
     
     func registerCardError() {
