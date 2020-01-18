@@ -30,7 +30,7 @@ final  class PaymentService: NSObject, PaymentServiceProtocol {
             "destination_user_id": payment.destination_user_id
         ]
 
-        service.request(urlString: API.Path.payment.value, method: .post, parameters: parameters) { (result: PaymentResult) in
+        service.request(urlString: API.Path.payment.value, method: .post, parameters: parameters, encoding: .json) { (result: PaymentResult) in
             switch result {
             case let .success(payment):
                 completion(.success(payment))
