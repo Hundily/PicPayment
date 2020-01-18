@@ -9,22 +9,38 @@
 import UIKit
 
 class ReceiptViewController: UIViewController {
-
+    
+    @IBOutlet weak var imageContact: UIImageView!
+    @IBOutlet weak var labelNickName: UILabel!
+    @IBOutlet weak var labelPaymentDate: UILabel!
+    @IBOutlet weak var labelPaymentId: UILabel!
+    @IBOutlet weak var labelFinalCreditCard: UILabel!
+    @IBOutlet weak var labelPaymentValue: UILabel!
+    @IBOutlet weak var labelTotalPaymentValue: UILabel!
+    private var receipt: PaymentReceipt?
+    private let kReceiptViewController = "ReceiptViewController"
+    
+    init(receipt: PaymentReceipt) {
+        super.init(nibName: kReceiptViewController, bundle: Bundle.main)
+        self.receipt = receipt
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setData()
     }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func setData() {
+        imageContact.layer.cornerRadius = imageContact.frame.size.width / 2
+        imageContact.imageFromURL(urlString: receipt?.img ?? "")
+        labelNickName.text = receipt?.username
+        labelPaymentDate.text = receipt?.transactionDate
+        labelPaymentId.text = "Transação: \(receipt?.id ?? 0)"
+        labelPaymentValue.text = String.currencyInputFormatting("\(receipt?.value ?? 0)")()
+        labelTotalPaymentValue.text = String.currencyInputFormatting("\(receipt?.value ?? 0)")()
     }
-    */
-
 }

@@ -13,5 +13,5 @@ struct PaymentReceipt {
     let transactionDate: String
     let img: String
     let username: String
-    let value: String
+    let value: Double
 }
