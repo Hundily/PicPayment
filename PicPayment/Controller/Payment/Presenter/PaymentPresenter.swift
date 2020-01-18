@@ -25,12 +25,22 @@ final class PaymentPresenter {
             guard let self = self else { return }
             switch result {
             case let .success(payment):
-                print("payment", payment)
+                self.viewProtocol.dismissLoading()
+                self.viewProtocol.showReceiptView(receipt: self.paymentReceiptModel(type: payment))
             case let.failure(error):
-                print("error", error)
                 self.viewProtocol.dismissLoading()
                 self.viewProtocol.show(error: error)
             }
         }
+    }
+    
+    func paymentReceiptModel(type paymentResponse: PaymentResponse) -> PaymentReceipt? {
+        if let res = paymentResponse.transaction {
+            let receipt = PaymentReceipt(id: res.id ?? 0, transactionDate: "\(res.timestamp ?? 0)", img: res.destination_user?.img ?? "", username: res.destination_user?.username ?? "", value: res.value ?? 0.0)
+            
+            return receipt
+        }
+        
+        return nil
     }
 }

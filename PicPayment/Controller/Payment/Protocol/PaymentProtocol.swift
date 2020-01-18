@@ -10,7 +10,7 @@ import Foundation
 
 protocol PaymentProtocol: AnyObject {
     func show()
-    func goReceiptView()
+    func showReceiptView(receipt: PaymentReceipt?)
     func showLoading()
     func dismissLoading()
     func show(error: Error)
