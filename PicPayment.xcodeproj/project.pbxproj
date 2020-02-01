@@ -97,7 +97,6 @@
 		B2C6D32D22B7508B00187D05 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = B2C6D32C22B7508B00187D05 /* loading.json */; };
 		B2C6D32F22B750A900187D05 /* LoadingViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6D32E22B750A900187D05 /* LoadingViewCell.swift */; };
 		B2C6D33222B750C700187D05 /* LoadingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C6D33122B750C700187D05 /* LoadingManager.swift */; };
-		B2C6D33422B7520500187D05 /* loading_new.json in Resources */ = {isa = PBXBuildFile; fileRef = B2C6D33322B7520500187D05 /* loading_new.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -214,7 +213,6 @@
 		B2C6D32C22B7508B00187D05 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
 		B2C6D32E22B750A900187D05 /* LoadingViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewCell.swift; sourceTree = "<group>"; };
 		B2C6D33122B750C700187D05 /* LoadingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingManager.swift; sourceTree = "<group>"; };
-		B2C6D33322B7520500187D05 /* loading_new.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading_new.json; sourceTree = "<group>"; };
 		BAA5D260C4999F0DBE0B23CD /* Pods_PicPayment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PicPayment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BEBC3B47F7FA135C7F851951 /* Pods-PicPayment-PicPaymentTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicPayment-PicPaymentTests.release.xcconfig"; path = "Target Support Files/Pods-PicPayment-PicPaymentTests/Pods-PicPayment-PicPaymentTests.release.xcconfig"; sourceTree = "<group>"; };
 		C30EA16D58371D471C7AD9F8 /* Pods-PicPayment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PicPayment.debug.xcconfig"; path = "Target Support Files/Pods-PicPayment/Pods-PicPayment.debug.xcconfig"; sourceTree = "<group>"; };
@@ -395,7 +393,6 @@
 		6818C08322B57B6200F04928 /* JSON */ = {
 			isa = PBXGroup;
 			children = (
-				B2C6D33322B7520500187D05 /* loading_new.json */,
 				B2C6D32C22B7508B00187D05 /* loading.json */,
 			);
 			path = JSON;
@@ -904,7 +901,6 @@
 				A03CE1B023CBC54700375306 /* SplashViewController.xib in Resources */,
 				6818C08122B57B4B00F04928 /* Colors.json in Resources */,
 				68CCDFE722B5816B0077F31A /* SFUIText-Heavy.ttf in Resources */,
-				B2C6D33422B7520500187D05 /* loading_new.json in Resources */,
 				A0E172E423CA25B200BC5142 /* PaymentViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

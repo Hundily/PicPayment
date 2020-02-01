@@ -12,7 +12,7 @@ import Lottie
 final class LoadingManager {
     
     // MARK: View
-    private let animationView = AnimationView(name: "loading_new")
+    private let animationView = AnimationView(name: "loading")
     
     func startAnimation(view: UIView) {
         let screen = UIScreen.main.bounds
