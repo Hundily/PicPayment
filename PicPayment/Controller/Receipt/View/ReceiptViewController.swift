@@ -31,16 +31,31 @@ class ReceiptViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setData()
+        setupUI()
     }
     
-    func setData() {
-        imageContact.layer.cornerRadius = imageContact.frame.size.width / 2
-        imageContact.imageFromURL(urlString: receipt?.img ?? "")
-        labelNickName.text = receipt?.username
-        labelPaymentDate.text = receipt?.transactionDate
-        labelPaymentId.text = "Transação: \(receipt?.id ?? 0)"
-        labelPaymentValue.text = String.currencyInputFormatting("\(receipt?.value ?? 0)")()
-        labelTotalPaymentValue.text = String.currencyInputFormatting("\(receipt?.value ?? 0)")()
+    private func setupUI() {
+        if let img = receipt?.img, let userName = receipt?.username, let transactionDate = receipt?.transactionDate, let id = receipt?.id, let value = receipt?.value {
+            let timeTransaction = TimeInterval(transactionDate) ?? 0.0
+            let time = Date(timeIntervalSince1970: TimeInterval(timeTransaction))
+            let formatter = DateFormatter()
+            formatter.dateFormat = "dd/MM/yyyy - HH:mm"
+            let date = formatter.string(from: time)
+            
+            imageContact.layer.cornerRadius = imageContact.frame.size.width / 2
+            imageContact.imageFromURL(urlString: img)
+            labelNickName.text = userName
+            labelPaymentDate.text = date
+            labelPaymentId.text = NSLocalizedString("Transação ", comment: "") + String(id)
+            
+            let currency = NumberFormatter()
+            currency.numberStyle = .currency
+            currency.locale = Locale(identifier: "pt_BR")
+            
+            if let formattedTipAmount = currency.string(from: NSNumber(value: value)) {
+                labelPaymentValue.text = formattedTipAmount
+                labelTotalPaymentValue.text = formattedTipAmount
+            }
+        }
     }
 }
