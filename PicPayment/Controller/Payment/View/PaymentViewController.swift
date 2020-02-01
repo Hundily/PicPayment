@@ -16,13 +16,14 @@ class PaymentViewController: UIViewController {
     @IBOutlet weak var labelNickName: UILabel!
     @IBOutlet weak var labelErrorPayment: UILabel!
     @IBOutlet weak var inputValue: SkyFloatingLabelTextField!
+    @IBOutlet weak var moneySymbol: UILabel!
     @IBOutlet weak var creditCardInfos: UILabel!
     @IBOutlet weak var buttonPayment: CustomButton!
     private var creditCard: CreditCard?
     private var creditCardLastFourNumber: String = ""
     private var contact: Contact?
     private let kPaymentViewController = "PaymentViewController"
-
+    
     fileprivate lazy var toolBar: ToolBarButtonKeyboard = {
         let cgRect = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 100.0)
         let tool = ToolBarButtonKeyboard(frame: cgRect, confirm: {
@@ -32,7 +33,7 @@ class PaymentViewController: UIViewController {
         })
         return tool
     }()
-
+    
     private lazy var presenter: PaymentPresenter = {
         let presenter = PaymentPresenter(viewProtocol: self, serviceAPI: PaymentService())
         return presenter
@@ -68,10 +69,6 @@ class PaymentViewController: UIViewController {
         inputValue.tintColor = .clear
         inputValue.textAlignment = .center
         inputValue.delegate = self
-        let centeredParagraphStyle = NSMutableParagraphStyle()
-        centeredParagraphStyle.alignment = .center
-        let attributedPlaceholder = NSAttributedString(string: "R$ 0,00", attributes: [NSAttributedString.Key.paragraphStyle: centeredParagraphStyle])
-        inputValue.attributedPlaceholder = attributedPlaceholder
         inputValue.addTarget(self, action: #selector(moneyTextFieldDidChange), for: .editingChanged)
         self.toolBar.configButton(type: .disable)
         buttonPayment.layoutButton(.disabled)
@@ -118,25 +115,37 @@ class PaymentViewController: UIViewController {
     
     @IBAction func actionPayment(_ sender: Any) {
         guard let value = inputValue.text else  { return }
-        let cardFormat = creditCard?.cardNumber.replacingOccurrences(of: " ", with: "", options: .literal, range: nil) ?? ""
-        let valueParse = value.replacingOccurrences(of: "R$", with: "", options: .literal, range: nil)
-        let valueParse2 = valueParse.trimmingCharacters(in: .whitespaces)
-        let paymentModel = Payment(card_number: cardFormat, cvv: Int(creditCard?.cardCvv ?? "") ?? 0, value: Double(valueParse2) ?? 0, expiry_date: creditCard?.cardExpired ?? "", destination_user_id: contact?.id ?? 0)
+        
+        if let card = creditCard?.cardNumber, let expiryDate = creditCard?.cardExpired, let cvv = creditCard?.cardCvv, let userId = contact?.id {
+            let cardNumberCast = card.trimmingCharacters(in: .whitespaces)
+            let doubleAmount = value.trimmingCharacters(in: .whitespaces).currencyToDouble()
+            if let cvvCast = Int(cvv) {
+                let paymentModel = Payment(card_number: cardNumberCast, cvv: cvvCast, value: doubleAmount, expiry_date: expiryDate, destination_user_id: userId)
                 
-        presenter.fetchPayment(payment: paymentModel)
+                presenter.fetchPayment(payment: paymentModel)
+            }
+        }
     }
     
     @objc func moneyTextFieldDidChange(_ textField: UITextField) {
-        
-        if let amountString = textField.text?.currencyInputFormatting() {
-            textField.text = amountString
-            self.toolBar.configButton(type: !amountString.isEmpty ? .enable : .disable)
+        if let amountString = inputValue.text?.currencyFormatting() {
+            if amountString.isEmpty {
+                textField.text = "0,00"
+                textField.textColor = .gray
+                moneySymbol.textColor = .gray
+                self.toolBar.configButton(type: .disable)
+            } else {
+                textField.text = amountString
+                textField.textColor = ColorName.green.color
+                moneySymbol.textColor = ColorName.green.color
+                self.toolBar.configButton(type: .enable)
+            }
         }
     }
 }
 
 extension PaymentViewController: PaymentProtocol {
-
+    
     func showReceiptView(receipt: PaymentReceipt?)  {
         guard let receipt = receipt else { return }
         let controller = ReceiptViewController(receipt: receipt)
@@ -165,7 +174,7 @@ extension PaymentViewController: PaymentProtocol {
 
 extension PaymentViewController: UITextFieldDelegate {
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        guard let text = textField.text else { return false }
+        guard textField.text != nil else { return false }
         self.setupTextFieldsAccessoryView()
         //self.interactor?.validInputValue(value: text.getNumberWithFormatValidate())
         return true
