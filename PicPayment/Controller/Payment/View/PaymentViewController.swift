@@ -15,7 +15,7 @@ class PaymentViewController: UIViewController {
     @IBOutlet weak var imageContact: UIImageView!
     @IBOutlet weak var labelNickName: UILabel!
     @IBOutlet weak var labelErrorPayment: UILabel!
-    @IBOutlet weak var inputValue: SkyFloatingLabelTextField!
+    @IBOutlet weak var inputValue: UITextField!
     @IBOutlet weak var moneySymbol: UILabel!
     @IBOutlet weak var creditCardInfos: UILabel!
     @IBOutlet weak var buttonPayment: CustomButton!
@@ -64,14 +64,12 @@ class PaymentViewController: UIViewController {
     private func setupUI() {
         labelErrorPayment.isHidden = true
         imageContact.layer.cornerRadius = imageContact.frame.size.width / 2
-        inputValue.lineHeight = 0
-        inputValue.selectedLineHeight = 0
+        inputValue.textColor = .gray
         inputValue.tintColor = .clear
-        inputValue.textAlignment = .center
         inputValue.delegate = self
         inputValue.addTarget(self, action: #selector(moneyTextFieldDidChange), for: .editingChanged)
         self.toolBar.configButton(type: .disable)
-        buttonPayment.layoutButton(.disabled)
+        self.buttonPayment.layoutButton(.disabled)
     }
     
     private func setData() {
@@ -101,9 +99,15 @@ class PaymentViewController: UIViewController {
     }
     
     private func handleTextIsEmpty() {
-        if let text = inputValue.text {
-            self.toolBar.configButton(type: !text.isEmpty ? .enable : .disable)
-            buttonPayment.layoutButton(!text.isEmpty ? .enabled : .disabled)
+        if let value = inputValue.text {
+            let doubleAmount = value.trimmingCharacters(in: .whitespaces).currencyToDouble()
+            if doubleAmount == 0 {
+                self.toolBar.configButton(type: .disable)
+                self.buttonPayment.layoutButton(.disabled)
+            } else {
+                self.toolBar.configButton(type: .enable)
+                self.buttonPayment.layoutButton(.enabled)
+            }
         }
     }
     
